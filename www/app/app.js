@@ -41,13 +41,13 @@ angular.module('app', ['ionic', 'app.controllers'])
                 controller: 'accountsController'
             })
             .state('app.accountTransactions', {
-                url: "/accountTransactions/:name",
+                url: "/accountTransactions/:accountName",
                 views: {
                     'menuContent': {
                         templateUrl: "app/accounts/accountTransactions.html"
                     }
                 },
-                controller: 'accountsController'
+                controller: 'accountTransactionsController'
             });
 
         // if none of the above states are matched, use this as the fallback

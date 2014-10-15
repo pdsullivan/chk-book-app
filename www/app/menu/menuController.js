@@ -103,7 +103,7 @@ angular.module('app.controllers', [])
         $scope.listCanSwipe = true;
         $scope.accountClick = function(item){
             console.log('nav ', item.name);
-            $state.go('app.accountTransactions');
+            $state.go('app.accountTransactions', {accountName: angular.toJson(item)});
         };
 
         $scope.onAccountDelete = function(item){
@@ -115,4 +115,11 @@ angular.module('app.controllers', [])
 
         };
 
+    })
+
+    .controller('accountTransactionsController', function($scope, $ionicModal, $stateParams, $timeout, $state) {
+        console.log('state1 params:', $stateParams);
+        console.log('accounttranscontroller');
+        $scope.transAccount = angular.fromJson($stateParams.accountName);
+        console.log($scope.transAccount);
     });
