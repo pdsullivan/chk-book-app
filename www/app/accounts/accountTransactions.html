@@ -30,14 +30,14 @@
             <ion-item class="item item-icon-right "  ng-repeat="item in transactions">
 
                 <h2>{{item.desc}} </h2>
-                <p>{{item.amount | currency}}</p>
+                <p>{{item.amount | currency}}</p><p>{{item.date | date}}</p>
 
                 <ion-option-button class="button-info"
                                    ng-click="onAccountEdit(item)">
                     Edit
                 </ion-option-button>
                 <ion-option-button class="button-assertive"
-                                   ng-click="onAccountDelete(item)">
+                                   ng-click="onTransactionDelete(item)">
                     Delete
                 </ion-option-button>
             </ion-item>

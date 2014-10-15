@@ -1,11 +1,11 @@
-<ion-view title="Accounts" ng-controller="accountsController" ng-init="loadAccounts()">
+
+<ion-view ng-controller="accountsController" title="Accounts" ng-init="loadAccounts()">
   <ion-nav-buttons side="left">
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
-
   </ion-nav-buttons>
     <ion-nav-buttons side="right">
         <button  class="button button-icon icon ion-ios7-plus-empty" ng-click="addAccount()"></button>
-    </ion-nav-buttons>
+  </ion-nav-buttons>
 
   <ion-content class="has-header" >
       <ion-list class="list" show-delete="shouldShowDelete"

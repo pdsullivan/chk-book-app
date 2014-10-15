@@ -54,6 +54,13 @@
             }, 500);
         };
 
+        $scope.onTransactionDelete = function(item){
+            var index = $scope.transactions.indexOf(item);
+            $scope.transactions.splice(index, 1);
+            $scope.saveTransactions();
+
+        };
+
         $scope.loadTransactions();
 
         var guid = (function() {
