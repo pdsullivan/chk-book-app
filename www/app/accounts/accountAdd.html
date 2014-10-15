@@ -1,26 +1,26 @@
 <div class="modal"  >
-    <ion-header-bar>
-        <h1 class="title">AccountDetail </h1>
-        <div class="buttons">
-            <button class="button button-clear" ng-click="closeAccountDetail()">Close</button>
-        </div>
-    </ion-header-bar>
-    <ion-content>
+<ion-header-bar>
+    <h1 class="title">AccountDetail </h1>
+    <div class="buttons">
+        <button class="button button-clear" ng-click="closeAccountDetail()">Close</button>
+    </div>
+</ion-header-bar>
+<ion-content>
         <form ng-submit="doAddAccount()" >
-            <div class="list">
-                <label class="item item-input">
-                    <span class="input-label">Name</span>
-<input type="text" ng-model="addAccountData.name" placeholder="New Account">
-</label>
-<label class="item item-input">
-    <span class="input-label">Start Amount</span>
-    <input type="text" ng-model="addAccountData.ammount" placeholder="0.00">
-</label>
-<label class="item">
-    <button class="button button-block button-positive" type="submit">Create Account</button>
-</label>
-</div>
-</form>
+        <div class="list">
+            <label class="item item-input">
+            <span class="input-label">Name</span>
+            <input type="text" ng-model="addAccountData.name" placeholder="New Account">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Start Amount</span>
+                <input type="text" ng-model="addAccountData.ammount" placeholder="0.00">
+            </label>
+            <label class="item">
+                <button class="button button-block button-positive" type="submit">Create Account</button>
+            </label>
+        </div>
+        </form>
 </ion-content>
 </div>
 

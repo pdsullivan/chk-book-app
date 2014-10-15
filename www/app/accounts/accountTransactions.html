@@ -8,8 +8,39 @@
     </ion-nav-buttons>
 
     <ion-content class="has-header" >
+        <div class="list card">
+            <div class="item item-text-wrap">
+                <h1>{{transAccount.name}}</h1>
+                <p>{{transAccount.ammount | currency}}</p>
+            </div>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" ng-click="addTransaction()">
+                    <i class="icon ion-plus"></i>
+                    Add Item
+                </a>
+                <a class="tab-item" >
+                    <i class="icon ion-edit"></i>
+                    Edit Account
+                </a>
+            </div>
+        </div>
 
-        <ion-list >
+        <ion-list class="list"  can-swipe="true">
+
+            <ion-item class="item item-icon-right "  ng-repeat="item in transactions">
+
+                <h2>{{item.desc}} </h2>
+                <p>{{item.amount | currency}}</p>
+
+                <ion-option-button class="button-info"
+                                   ng-click="onAccountEdit(item)">
+                    Edit
+                </ion-option-button>
+                <ion-option-button class="button-assertive"
+                                   ng-click="onAccountDelete(item)">
+                    Delete
+                </ion-option-button>
+            </ion-item>
 
         </ion-list>
 

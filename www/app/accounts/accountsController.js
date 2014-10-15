@@ -35,6 +35,7 @@
         // Open the login modal
         $scope.addAccount = function() {
             $scope.accountDetailModal.show();
+            $scope.addAccountData.id = guid();
 //            $scope.addAccountData.ammount = "0.00";
 //            $scope.addAccountData.name = "New Account";
         };
@@ -75,6 +76,18 @@
             swal("All Done!", "Account is deleted!", "success")
 
         };
+
+        var guid = (function() {
+            function s4() {
+                return Math.floor((1 + Math.random()) * 0x10000)
+                    .toString(16)
+                    .substring(1);
+            }
+            return function() {
+                return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+                    s4() + '-' + s4() + s4() + s4();
+            };
+        })();
 
     };
 })();
