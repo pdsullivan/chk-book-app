@@ -37,4 +37,42 @@
     };
 })();
 
+<<<<<<< Updated upstream
+=======
+        $scope.loadAddAccount = function() {
+        };
+
+        // Perform the login action when the user submits the login form
+        $scope.doAddAccount = function() {
+            console.log('Doing Add', $scope.addAccountData.ammount);
+
+            // Simulate a login delay. Remove this and replace with your login
+            // code if using a login system
+            $timeout(function() {
+                $scope.closeAccountDetail();
+                $scope.accounts.push($scope.addAccountData);
+                $scope.addAccountData = {};
+                $scope.saveAccountsData();
+            }, 1000);
+        };
+
+        $scope.saveAccountsData = function(){
+            window.localStorage['accounts'] = angular.toJson($scope.accounts);
+        };
+
+
+        $scope.listCanSwipe = true;
+        $scope.accountClick = function(item){
+            console.log('nav ', item.name);
+            $state.go('app.accountTransactions');
+        };
+
+        $scope.onAccountDelete = function(item){
+            var index = $scope.accounts.indexOf(item);
+            $scope.accounts.splice(index, 1);
+            $scope.saveAccountsData();
+            swal("All Done!", "Account is deleted!", "success")
+
+        };
+>>>>>>> Stashed changes
 
