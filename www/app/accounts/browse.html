@@ -1,0 +1,57 @@
+<ion-view title="Accounts" ng-controller="accountsController" ng-init="loadAccounts()">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+
+  </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button  class="button button-icon icon ion-ios7-plus-empty" ng-click="addAccount()"></button>
+    </ion-nav-buttons>
+
+  <ion-content class="has-header" >
+      <ion-list class="list" show-delete="shouldShowDelete"
+                show-reorder="shouldShowReorder"
+                can-swipe="listCanSwipe">
+
+          <ion-item class="item item-icon-right " ng-repeat="item in accounts" ng-click="accountClick(item)">
+
+              <h2>{{item.name}}</h2>
+              <p>{{item.ammount}}</p>
+
+              <i class="icon ion-ios7-arrow-thin-right"></i>
+              <ion-option-button class="button-positive"
+                                 ng-click="share(item)">
+                  Share
+              </ion-option-button>
+              <ion-option-button class="button-info"
+                                 ng-click="edit(item)">
+                  Edit
+              </ion-option-button>
+              <ion-option-button class="button-assertive"
+                                 ng-click="onAccountDelete(item)">
+                  Delete
+              </ion-option-button>
+              <ion-reorder-button class="ion-navicon"
+                                  on-reorder="reorderItem(item, $fromIndex, $toIndex)">
+              </ion-reorder-button>
+          </ion-item>
+      </ion-list>
+      <!--<div class="row">-->
+
+          <!--<div class="col col-50" ng-repeat="item in accounts">-->
+              <!--<div class="card">-->
+                  <!--<div class="item  text-center">-->
+                      <!--{{item.ammount}}-->
+                  <!--</div>-->
+                  <!--<div class="item  text-center">-->
+                      <!--<i class="icon ion-locked"></i>-->
+                  <!--</div>-->
+                  <!--<div class="item  text-center">-->
+                      <!--{{item.name}}-->
+                  <!--</div>-->
+              <!--</div>-->
+          <!--</div>-->
+      <!--</div>-->
+
+
+  </ion-content>
+</ion-view>
