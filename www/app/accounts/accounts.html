@@ -14,16 +14,12 @@
 
           <ion-item class="item item-icon-right " ng-repeat="item in accounts" ng-click="accountClick(item)">
 
-              <h2>{{item.name}}</h2>
-              <p>{{item.ammount}}</p>
+              <h2>{{item.name}} </h2>
+              <spann class="badge badge-assertive">{{item.ammount | currency}}</spann>
 
-              <i class="icon ion-ios7-arrow-thin-right"></i>
-              <ion-option-button class="button-positive"
-                                 ng-click="share(item)">
-                  Share
-              </ion-option-button>
+              <i class="icon ion-ios7-arrow-right"></i>
               <ion-option-button class="button-info"
-                                 ng-click="edit(item)">
+                                 ng-click="onAccountEdit(item)">
                   Edit
               </ion-option-button>
               <ion-option-button class="button-assertive"

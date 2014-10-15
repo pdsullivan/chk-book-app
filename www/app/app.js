@@ -31,11 +31,11 @@ angular.module('app', ['ionic', 'app.controllers'])
                 templateUrl: "app/menu/menu.html",
                 controller: 'menuController'
             })
-            .state('app.browse', {
-                url: "/browse",
+            .state('app.accounts', {
+                url: "/accounts",
                 views: {
                     'menuContent' :{
-                        templateUrl: "app/accounts/browse.html"
+                        templateUrl: "app/accounts/accounts.html"
                     }
                 },
                 controller: 'accountsController'
@@ -51,5 +51,5 @@ angular.module('app', ['ionic', 'app.controllers'])
             });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/browse');
+        $urlRouterProvider.otherwise('/app/accounts');
     });
