@@ -1,0 +1,21 @@
+<div class="modal"  >
+    <ion-header-bar>
+        <h1 class="title">Edit Account</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeAccountEdit()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="doEditAccount()" >
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Name</span>
+                    <input type="text" ng-model="editAccountData.name" placeholder="New Account">
+                </label>
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit">Done</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</div>

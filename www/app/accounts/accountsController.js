@@ -27,6 +27,7 @@
             $scope.accountDetailModal = acdmodal;
         });
 
+
         // Triggered in the login modal to close it
         $scope.closeAccountDetail = function() {
             $scope.accountDetailModal.hide();
@@ -36,11 +37,10 @@
         $scope.addAccount = function() {
             $scope.accountDetailModal.show();
             $scope.addAccountData.id = guid();
-//            $scope.addAccountData.ammount = "0.00";
-//            $scope.addAccountData.name = "New Account";
         };
 
         $scope.loadAddAccount = function() {
+
         };
 
         // Perform the action when the user submits the form
@@ -77,6 +77,49 @@
 
         };
 
+
+
+        /////////// EDIT ACCOUNT MODAL STUFF  //////////////////////
+
+        $scope.editAccountData = {};
+
+        $ionicModal.fromTemplateUrl('app/accounts/accountEdit.html', {
+            scope: $scope
+        }).then(function(acteditmodal) {
+            $scope.accountEditModal = acteditmodal;
+        });
+
+        $scope.onAccountEdit = function(item) {
+            $scope.editAccountData.id = item.id;
+            $scope.editAccountData.name = item.name;
+            $scope.accountEditModal.show();
+        };
+
+        $scope.closeAccountEdit = function() {
+            $scope.accountEditModal.hide();
+            $scope.editAccountData = {};
+        };
+
+        $scope.doEditAccount = function() {
+            console.log('Done Editing');
+
+            $scope.accountEditModal.hide();
+
+            for (var i = 0; i < $scope.accounts.length; i++) {
+                var currentItem = $scope.accounts[i];
+                if(currentItem.id == $scope.editAccountData.id){
+                    currentItem.name = $scope.editAccountData.name;
+                }
+            }
+            $scope.editAccountData = {};
+            $scope.saveAccountsData();
+        };
+
+
+
+        ///////////////////////////
+        //////GUID Method
+        ///////////////////////////
         var guid = (function() {
             function s4() {
                 return Math.floor((1 + Math.random()) * 0x10000)
