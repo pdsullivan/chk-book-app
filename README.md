@@ -5,7 +5,7 @@ App I am working on building using the [Ionic Framework](http://ionicframework.c
 
 Every now and then I am pushing updates to project site which is at http://pdsullivan.github.io/ChkBook.
 
-
+![App](https://www.dropbox.com/s/jiaai1r5vgsufgt/Photo%20Oct%2017%2C%202%2006%2030%20PM.png?dl=0)
 
 ## License
 
