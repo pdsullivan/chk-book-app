@@ -1,9 +1,9 @@
 ChkBook
 =======
 
+App I am working on building using the [Ionic Framework](http://ionicframework.com/).
 
 
-<hr />
 
 ## License
 
