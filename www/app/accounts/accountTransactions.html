@@ -11,7 +11,7 @@
         <div class="list card">
             <div class="item item-text-wrap">
                 <h1>{{transAccount.name}}</h1>
-                <p>{{transAccount.ammount | currency}}</p>
+                <p>{{transAccount.amount | currency}}</p>
             </div>
             <div class="item tabs tabs-secondary tabs-icon-left">
                 <a class="tab-item" ng-click="addTransaction()">
@@ -28,10 +28,15 @@
         <ion-list class="list"  can-swipe="true">
 
             <ion-item class="item item-icon-right "  ng-repeat="item in transactions">
-
+                <label class="checkbox">
+                    <input type="checkbox" ng-click=" $event.stopPropagation();" ng-model="item.cleared">
+                </label>
                 <h2>{{item.desc}} </h2>
-                <p>{{item.amount | currency}}</p><p>{{item.date | date}}</p>
-
+                <p>
+                    <span class="badge" ng-class="{false : 'badge-assertive', true : 'badge-stable'}[item.isPositive]">{{item.amount | currency}}</span>
+                </p>
+                <p>{{item.date | date}}</p>
+                <p>{{item.memo}}</p>
                 <ion-option-button class="button-info"
                                    ng-click="onAccountEdit(item)">
                     Edit

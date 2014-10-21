@@ -45,7 +45,7 @@
 
         // Perform the action when the user submits the form
         $scope.doAddAccount = function() {
-            console.log('Doing Add', $scope.addAccountData.ammount);
+            console.log('Doing Add', $scope.addAccountData.amount);
 
             // Simulate a login delay. Remove this and replace with your login
             // code if using a login system

@@ -12,18 +12,32 @@
 
 
         console.log('state1 params:', $stateParams);
-        console.log('accounttranscontroller');
+
+
         $scope.transAccount = angular.fromJson($stateParams.accountName);
+
         console.log($scope.transAccount);
+
+        $scope.updateTotal = function(){
+
+
+            angular.forEach($scope.transactions, function(value, key) {
+                $scope.transAccount.amount = ($scope.transAccount.amount + value.amount);
+            });
+
+        };
 
         $scope.loadTransactions = function(){
             var transString = window.localStorage[$scope.transAccount.id+'transactions'];
             if(transString) {
                 $scope.transactions = angular.fromJson(transString);
             }
+            $scope.updateTotal();
         };
+
         $scope.saveTransactions = function(){
             window.localStorage[$scope.transAccount.id+'transactions'] = angular.toJson($scope.transactions);
+            $scope.updateTotal();
         };
 
         $ionicModal.fromTemplateUrl('app/accounts/addTransaction.html', {
@@ -31,34 +45,48 @@
         }).then(function(addTranModal) {
             $scope.addTranModal = addTranModal;
         });
+
         $scope.addTransaction = function() {
-            $scope.addTranModal.show();
             $scope.addTransactionData.id = guid();
-//            $scope.addAccountData.ammount = "0.00";
-//            $scope.addAccountData.name = "New Account";
+            $scope.addTransactionData.amount = 0.00;
+            $scope.addTransactionData.isPositive = false;
+            $scope.addTranModal.show();
         };
+
         $scope.closeAddTransaction = function() {
             $scope.addTranModal.hide();
         };
 
-        $scope.doAddTransaction = function() {
-            console.log('Doing Add Transaction', $scope.addTransactionData.amount);
+        $scope.doAddTransaction = function(data) {
+            console.log('Doing Add Transaction', data.amount);
 
             // Simulate a login delay. Remove this and replace with your login
             // code if using a login system
-            $timeout(function() {
-                $scope.closeAddTransaction();
-                $scope.transactions.push($scope.addTransactionData);
-                $scope.addTransactionData = {};
-                $scope.saveTransactions();
-            }, 500);
+
+            $scope.closeAddTransaction();
+            $scope.transactions.push($scope.addTransactionData);
+            $scope.addTransactionData = {};
+            $scope.saveTransactions();
+            $scope.updateTotal();
+
         };
 
         $scope.onTransactionDelete = function(item){
             var index = $scope.transactions.indexOf(item);
             $scope.transactions.splice(index, 1);
             $scope.saveTransactions();
+            $scope.updateTotal();
 
+        };
+
+        $scope.onChangePositiveNegativeToggle = function(data){
+            if(data){
+                $scope.addTransactionData.amount = Math.abs($scope.addTransactionData.amount);
+
+            } else {
+                $scope.addTransactionData.amount = $scope.addTransactionData.amount * -1;
+            }
+            $scope.addTransactionData.isPositive = data;
         };
 
         $scope.loadTransactions();
