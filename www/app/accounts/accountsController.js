@@ -28,6 +28,9 @@
             $scope.saveAccountsData();
         };
 
+
+
+
         $ionicModal.fromTemplateUrl('app/accounts/accountAdd.html', {
             scope: $scope
         }).then(function(acdmodal) {
