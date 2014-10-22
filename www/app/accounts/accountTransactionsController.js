@@ -7,6 +7,11 @@
     function accountTransactionsController($scope, $ionicModal, $stateParams, $timeout, $state) {
 
 
+        //
+        //update totals now are working off of calculations each time.
+        //might want to update a main total then from there that would be a running total.
+        //will only want to update once each time something changes...will want to make sure and update
+        //back to the account total on the main screen.
         $scope.addTransactionData = {};
         $scope.transactions = [];
 

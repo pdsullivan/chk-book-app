@@ -6,11 +6,18 @@
 
     function accountsController($scope, $ionicModal, $stateParams, $timeout, $state) {
 
-        $scope.TestTitle = "asdfaf a";
         $scope.addAccountData = {};
 
         $scope.accounts = [];
 
+        $scope.totalAccounts = function(){
+            angular.forEach($scope.accounts, function(item){
+                //add up item.amount's into a variable.
+
+            });
+            //save that variable to the database.
+            //
+        };
 
         $scope.loadAccounts = function(){
             var accountsstring = window.localStorage['accounts'];
@@ -118,7 +125,7 @@
 
 
         ///////////////////////////
-        //////GUID Method
+        //////GuId Method
         ///////////////////////////
         var guid = (function() {
             function s4() {
