@@ -2,21 +2,49 @@
 (function () {
     'use strict';
 
-    angular.module('app').controller('accountsController', ["$scope","$ionicModal", '$stateParams', '$timeout', '$state', accountsController]);
+    angular.module('app').controller('accountsController', ["$scope","$ionicModal",'$ionicPopup', '$stateParams', '$timeout', '$state', accountsController]);
 
-    function accountsController($scope, $ionicModal, $stateParams, $timeout, $state) {
+    function accountsController($scope, $ionicModal,$ionicPopup, $stateParams, $timeout, $state) {
 
         $scope.addAccountData = {};
 
         $scope.accounts = [];
+        $scope.transactions = [];
+
+
+        $scope.loadTransactions = function(account){
+            var transString = window.localStorage[account.id+'transactions'];
+            if(transString) {
+                $scope.transactions = angular.fromJson(transString);
+            }
+        };
 
         $scope.totalAccounts = function(){
             angular.forEach($scope.accounts, function(item){
                 //add up item.amount's into a variable.
+                $scope.transAccount = item.id;
+
+                $scope.loadTransactions(item);
+
+                item.total = item.amount;
+
+                angular.forEach($scope.transactions, function(value, key) {
+                    //if(value.cleared){
+                        if(value.isPositive){
+                            item.total = (item.total + value.amount);
+
+                        } else {
+                            item.total = (item.total - value.amount);
+                        }
+                    //}
+                });
+
+                $scope.transactions = [];
 
             });
             //save that variable to the database.
             //
+            $scope.saveAccountsData();
         };
 
         $scope.loadAccounts = function(){
@@ -25,9 +53,12 @@
                 $scope.accounts = angular.fromJson(accountsstring);
             }
 
-            $scope.saveAccountsData();
-        };
+            $scope.totalAccounts();
 
+            $scope.saveAccountsData();
+            //bla
+
+        };
 
 
 
@@ -57,14 +88,13 @@
         $scope.doAddAccount = function() {
             console.log('Doing Add', $scope.addAccountData.amount);
 
-            // Simulate a login delay. Remove this and replace with your login
-            // code if using a login system
-            $timeout(function() {
-                $scope.closeAccountDetail();
-                $scope.accounts.push($scope.addAccountData);
-                $scope.addAccountData = {};
-                $scope.saveAccountsData();
-            }, 500);
+
+            $scope.closeAccountDetail();
+            $scope.accounts.push($scope.addAccountData);
+            $scope.addAccountData = {};
+            $scope.totalAccounts();
+            $scope.saveAccountsData();
+
         };
 
         $scope.saveAccountsData = function(){
@@ -79,12 +109,22 @@
         };
 
         $scope.onAccountDelete = function(item){
-            var index = $scope.accounts.indexOf(item);
-            $scope.accounts.splice(index, 1);
-            $scope.saveAccountsData();
-            $scope.$apply();
-            swal("All Done!", "Account is deleted!", "success")
+            var confirmPopup = $ionicPopup.confirm({
+                title: 'Delete Account',
+                template: 'Are you sure you want to delete this account?'
+            });
+            confirmPopup.then(function(res) {
+                if(res) {
 
+                    localStorage.removeItem(item.id+'transactions');
+
+                    var index = $scope.accounts.indexOf(item);
+                    $scope.accounts.splice(index, 1);
+                    $scope.saveAccountsData();
+                } else {
+                    console.log('You are not sure');
+                }
+            });
         };
 
 
@@ -126,6 +166,15 @@
         };
 
 
+
+        $scope.getAccountbyId = function(id){
+          angular.forEach($scope.accounts, function(item){
+              if(item.id == id){
+                  return item;
+              }
+
+          });
+        };
 
         ///////////////////////////
         //////GuId Method

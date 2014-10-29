@@ -48,6 +48,15 @@ angular.module('app', ['ionic', 'app.controllers'])
                     }
                 },
                 controller: 'accountTransactionsController'
+            })
+            .state('app.about', {
+                url: "/about",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "app/about/about.html"
+                    }
+                },
+                controller: 'aboutController'
             });
 
         // if none of the above states are matched, use this as the fallback
