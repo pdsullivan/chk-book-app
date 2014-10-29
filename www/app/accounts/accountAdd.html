@@ -16,6 +16,14 @@
                 <span class="input-label">Start Amount</span>
                 <input type="number" placeholder="0.00" ng-model="addAccountData.amount" step="0.01" placeholder="0.00">
             </label>
+            <div class="item item-input item-select">
+                <div class="input-label">
+                    Account Type
+                </div>
+
+                <select ng-model="addAccountData.type" ng-options="item as item for item in accountTypes">
+                </select>
+            </div>
             <label class="item">
                 <button class="button button-block button-positive" type="submit">Create Account</button>
             </label>

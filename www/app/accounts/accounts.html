@@ -13,7 +13,9 @@
                 can-swipe="listCanSwipe" option-buttons="itemButtons">
 
           <ion-item class="item item-icon-left item-icon-right" ng-repeat="item in accounts" ng-click="accountClick(item)">
-              <i class="icon ion-card"></i>
+              <i ng-if="item.type =='checking'" class="icon ion-card"></i>
+              <i ng-if="item.type =='saving'" class="icon ion-arrow-graph-up-right"></i>
+              <i ng-if="item.type =='other'" class="icon ion-cash"></i>
               <div class="row">
                   <h1>{{item.name}}</h1>
                   <br/>

@@ -12,6 +12,13 @@
                     <span class="input-label">Name</span>
                     <input type="text" ng-model="editAccountData.name" placeholder="New Account">
                 </label>
+                <div class="item item-input item-select">
+                    <div class="input-label">
+                        Account Type
+                    </div>
+                    <select ng-model="editAccountData.type" ng-options="item as item for item in accountTypes">
+                    </select>
+                </div>
                 <label class="item">
                     <button class="button button-block button-positive" type="submit">Done</button>
                 </label>

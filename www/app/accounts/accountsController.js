@@ -7,10 +7,13 @@
     function accountsController($scope, $ionicModal,$ionicPopup, $stateParams, $timeout, $state) {
 
         $scope.addAccountData = {};
-
         $scope.accounts = [];
         $scope.transactions = [];
-
+        $scope.accountTypes = [
+            'saving',
+            'checking',
+            'other'
+        ];
 
         $scope.loadTransactions = function(account){
             var transString = window.localStorage[account.id+'transactions'];
@@ -86,7 +89,7 @@
 
         // Perform the action when the user submits the form
         $scope.doAddAccount = function() {
-            console.log('Doing Add', $scope.addAccountData.amount);
+            console.log('Doing Add', $scope.addAccountData);
 
 
             $scope.closeAccountDetail();
@@ -142,6 +145,7 @@
         $scope.onAccountEdit = function(item) {
             $scope.editAccountData.id = item.id;
             $scope.editAccountData.name = item.name;
+            $scope.editAccountData.type = item.type;
             $scope.accountEditModal.show();
         };
 
@@ -159,6 +163,7 @@
                 var currentItem = $scope.accounts[i];
                 if(currentItem.id == $scope.editAccountData.id){
                     currentItem.name = $scope.editAccountData.name;
+                    currentItem.type = $scope.editAccountData.type;
                 }
             }
             $scope.editAccountData = {};
