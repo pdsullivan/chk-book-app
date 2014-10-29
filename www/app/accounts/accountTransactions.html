@@ -7,7 +7,7 @@
         <button  class="button button-icon icon ion-ios7-plus-empty" ng-click="addTransaction()"></button>
     </ion-nav-buttons>
 
-    <ion-content class="has-header" >
+    <ion-content class="has-header" has-bouncing="true">
 
         <div class="list card" >
         <div class="item item-text-wrap">
@@ -39,7 +39,7 @@
                     <div class="col">
                         <h2>{{item.desc}} </h2>
                         <p>{{item.date | date}}</p>
-                        <p>{{item.memo}}</p>
+                        <p ng-if="item.memo">-{{item.memo}}</p>
                     </div>
                     <p>
                         <span ng-if="item.isPositive" class="badge" ng-class="{false : 'badge-assertive', true : 'badge-stable'}[item.isPositive]">{{item.amount | currency}}</span>

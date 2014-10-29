@@ -1,10 +1,17 @@
 <div class="modal"  >
-<ion-header-bar>
+<ion-header-bar class="bar-dark">
     <h1 class="title">AccountDetail </h1>
     <div class="buttons">
-        <button class="button button-clear" ng-click="closeAccountDetail()">Close</button>
+        <button class="button button-clear" ng-click="closeAccountDetail()"><i class="icon ion-ios7-close-outline"></i></button>
     </div>
 </ion-header-bar>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script src="dist/jquery.maskMoney.min.js" type="text/javascript"></script>
+    <script>
+        $(function() {
+            $('#currency').maskMoney();
+        })
+    </script>
 <ion-content>
         <form ng-submit="doAddAccount()" >
         <div class="list">
@@ -25,7 +32,7 @@
                 </select>
             </div>
             <label class="item">
-                <button class="button button-block button-positive" type="submit">Create Account</button>
+                <button class="button button-block button-positive" type="submit"><i class="icon ion-ios7-checkmark-outline"></i> Create Account</button>
             </label>
         </div>
         </form>
