@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c215d56-978b-4f1e-9646-ad2ab23d529c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/app/about/about.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/app/about/aboutController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/app/accounts/editTransaction.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/accounts/accountAdd.html" afterPath="$PROJECT_DIR$/www/app/accounts/accountAdd.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/accounts/accountTransactions.html" afterPath="$PROJECT_DIR$/www/app/accounts/accountTransactions.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/accounts/accountTransactionsController.js" afterPath="$PROJECT_DIR$/www/app/accounts/accountTransactionsController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/accounts/accounts.html" afterPath="$PROJECT_DIR$/www/app/accounts/accounts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/accounts/accountsController.js" afterPath="$PROJECT_DIR$/www/app/accounts/accountsController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/accounts/addTransaction.html" afterPath="$PROJECT_DIR$/www/app/accounts/addTransaction.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/app.js" afterPath="$PROJECT_DIR$/www/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/menu/menu.html" afterPath="$PROJECT_DIR$/www/app/menu/menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="5c215d56-978b-4f1e-9646-ad2ab23d529c" name="Default" comment="" />
     <ignored path="ChkBook.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,7 +49,7 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/www/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.59490085" vertical-offset="0" max-vertical-offset="735">
+                <state vertical-scroll-proportion="0.5982906" vertical-offset="0" max-vertical-offset="735">
                   <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
                   <folding />
                 </state>
@@ -77,7 +63,7 @@
           <file leaf-file-name="accountTransactionsController.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/www/app/accounts/accountTransactionsController.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.6752136" vertical-offset="1665" max-vertical-offset="3315">
+                <state vertical-scroll-proportion="-3.696275" vertical-offset="1665" max-vertical-offset="3315">
                   <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
                   <folding>
                     <element signature="e#6504#6860#0" expanded="false" />
@@ -319,20 +305,27 @@
       <option name="project" value="LOCAL" />
       <updated>1413995184176</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lots of stuff from late night coding.">
+      <created>1414561123881</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1414561123881</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="23" width="1600" height="877" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48538753" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4866242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.54892" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -342,7 +335,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -368,7 +360,8 @@
     <MESSAGE value="commit from inside webstorm." />
     <MESSAGE value="workspace file." />
     <MESSAGE value="test." />
-    <option name="LAST_COMMIT_MESSAGE" value="test." />
+    <MESSAGE value="lots of stuff from late night coding." />
+    <option name="LAST_COMMIT_MESSAGE" value="lots of stuff from late night coding." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -754,7 +747,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59490085" vertical-offset="0" max-vertical-offset="735">
+        <state vertical-scroll-proportion="0.5982906" vertical-offset="0" max-vertical-offset="735">
           <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
           <folding />
         </state>
@@ -778,7 +771,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/app/accounts/accountTransactionsController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6752136" vertical-offset="1665" max-vertical-offset="3315">
+        <state vertical-scroll-proportion="-3.696275" vertical-offset="1665" max-vertical-offset="3315">
           <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding>
             <element signature="e#6504#6860#0" expanded="false" />
