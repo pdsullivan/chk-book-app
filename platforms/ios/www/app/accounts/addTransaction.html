@@ -1,0 +1,42 @@
+<div class="modal"  >
+    <ion-header-bar class="bar-dark">
+        <h1 class="title">Add Item</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeAddTransaction()"><i class="icon ion-ios7-close-outline"></i></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="doAddTransaction(addTransactionData)" >
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Desc</span>
+                    <input ng-required="true" type="text" ng-model="addTransactionData.desc" placeholder="McDonald's">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Amount</span>
+                    <input ng-required="true" type="number" placeholder="0.00" step="0.01" ng-model="addTransactionData.amount" >
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Date</span>
+                    <input ng-required="true" ng-model="addTransactionData.date" type="date">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Memo</span>
+                    <input ng-required="true" type="text" ng-model="addTransactionData.memo" placeholder="Memo">
+                </label>
+
+                <div class="row button-bar">
+                    <a class="button" ng-class="{'button-positive': addTransactionData.isPositive}" ng-click="onChangePositiveNegativeToggle(true)">
+                        <i class="icon ion-ios7-plus-outline"></i>
+                    </a>
+                    <a class="button" ng-class="{'button-assertive': !addTransactionData.isPositive}"  ng-click="onChangePositiveNegativeToggle(false)">
+                        <i class="icon ion-ios7-minus-outline"></i>
+                    </a>
+                </div>
+                <label class="row">
+                    <button class="button button-block button-positive" type="submit"><i class="icon ion-ios7-checkmark-outline"></i> Create Item</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</div>
