@@ -16,6 +16,7 @@
         $scope.editTransactionData = {};
         $scope.transactions = [];
         $scope.predicate = '-date';
+
         $scope.transAccount = angular.fromJson($stateParams.accountName);
 
         console.log('state1 params:', $stateParams);
@@ -25,6 +26,7 @@
 
         }
 
+        //TODO: pull into service
         $scope.loadTransactions = function(){
             var transString = window.localStorage[$scope.transAccount.id+'transactions'];
             if(transString) {
@@ -33,6 +35,8 @@
             $scope.updateTotal();
         };
 
+
+        //TODO: pull into service
         $scope.deleteTransaction = function(item){
 
             var index = $scope.transactions.indexOf(item);
@@ -93,6 +97,7 @@
             //}
         };
 
+        //TODO: pull into service
         $scope.saveTransactions = function(){
             window.localStorage[$scope.transAccount.id+'transactions'] = angular.toJson($scope.transactions);
             $scope.updateTotal();

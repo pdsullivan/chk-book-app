@@ -4,7 +4,7 @@
 
     angular.module('app').controller('accountsController', ["$scope","$ionicModal",'$ionicPopup', '$stateParams', '$timeout', '$state', accountsController]);
 
-    function accountsController($scope, $ionicModal,$ionicPopup, $stateParams, $timeout, $state) {
+    function accountsController($scope, $ionicModal, $ionicPopup, $stateParams, $timeout, $state) {
 
         $scope.addAccountData = {};
         $scope.accounts = [];
@@ -15,6 +15,7 @@
             'other'
         ];
 
+        //TODO: pull into service
         $scope.loadTransactions = function(account){
             var transString = window.localStorage[account.id+'transactions'];
             if(transString) {
@@ -100,6 +101,7 @@
 
         };
 
+        //TODO: pull into service
         $scope.saveAccountsData = function(){
             window.localStorage['accounts'] = angular.toJson($scope.accounts);
         };
@@ -111,6 +113,7 @@
             $state.go('app.accountTransactions', {accountName: angular.toJson(item)});
         };
 
+        //TODO: pull into service
         $scope.onAccountDelete = function(item){
             var confirmPopup = $ionicPopup.confirm({
                 title: 'Delete Account',
