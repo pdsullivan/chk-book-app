@@ -31,7 +31,7 @@
 
 
         <ion-list class="list" scroll="true" can-swipe="true">
-            <ion-item class="item item-icon-right "  ng-repeat="item in transactions | orderBy:predicate:reverse">
+            <ion-item class="item item-icon-right "  ng-repeat="item in transactions | orderBy:['-date', '-createdDate']">
                 <div class="row">
                     <label class="checkbox">
                         <input type="checkbox" ng-model="item.cleared" ng-change="checkboxClick(item)" >

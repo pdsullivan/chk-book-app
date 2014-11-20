@@ -6,7 +6,7 @@
 
     function aboutController($scope, $ionicModal, $stateParams, $timeout, $state) {
 
-        $scope.version = '0.1';
+        $scope.version = '1.0';
         $scope.author = 'Patrick Sullivan'
 
 

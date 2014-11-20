@@ -15,7 +15,8 @@
         $scope.addTransactionData = {};
         $scope.editTransactionData = {};
         $scope.transactions = [];
-        $scope.predicate = '-date';
+        $scope.predicate = '-date , -createdDate';
+
         $scope.transAccount = angular.fromJson($stateParams.accountName);
 
         console.log('state1 params:', $stateParams);
@@ -25,14 +26,18 @@
 
         }
 
+        //TODO: pull into service
         $scope.loadTransactions = function(){
             var transString = window.localStorage[$scope.transAccount.id+'transactions'];
             if(transString) {
                 $scope.transactions = angular.fromJson(transString);
+                console.log('log', $scope.transactions);
             }
             $scope.updateTotal();
         };
 
+
+        //TODO: pull into service
         $scope.deleteTransaction = function(item){
 
             var index = $scope.transactions.indexOf(item);
@@ -50,10 +55,12 @@
             angular.forEach($scope.transactions, function(value, key) {
                 if(value.cleared){
                     if(value.isPositive){
-                        $scope.transAccount.cleared = ($scope.transAccount.total + value.amount);
+                        //$scope.transAccount.cleared = ($scope.transAccount.total + value.amount);
+                        $scope.transAccount.cleared += value.amount;
 
                     } else {
-                        $scope.transAccount.cleared = ($scope.transAccount.total - value.amount);
+                        //$scope.transAccount.cleared = ($scope.transAccount.total - value.amount);
+                        $scope.transAccount.cleared -= value.amount;
                     }
                 } else {
                     if(value.isPositive){
@@ -79,20 +86,13 @@
 
 
         $scope.checkboxClick = function(item){
-
-            //console.log('checkboxClick', item);
+            console.log('checkbox click', item.cleared);
             $scope.updateTotal();
             $scope.saveTransactions();
 
-            //if(item.cleared){
-            //
-            //    $scope.updateTotal();
-            //} else{
-            //
-            //    $scope.updateTotal();
-            //}
         };
 
+        //TODO: pull into service
         $scope.saveTransactions = function(){
             window.localStorage[$scope.transAccount.id+'transactions'] = angular.toJson($scope.transactions);
             $scope.updateTotal();
@@ -109,6 +109,7 @@
             $scope.addTransactionData.id = guid();
             $scope.addTransactionData.amount = null;
             $scope.addTransactionData.isPositive = false;
+            $scope.addTransactionData.createdDate = new Date();
             $scope.addTranModal.show();
         };
 

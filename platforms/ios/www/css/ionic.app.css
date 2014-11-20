@@ -7813,3 +7813,13 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 .platform-c:not(.enable-transitions) * {
   -webkit-transition: none !important;
   transition: none !important; }
+
+.menu-content {
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none;
+  box-shadow: -1px 0px 2px rgba(0, 0, 0, 0.2), 1px 0px 2px rgba(0, 0, 0, 0.2); }
+
+.grade-b .menu-content, .grade-c .menu-content {
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc; }
