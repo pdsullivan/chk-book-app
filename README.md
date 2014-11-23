@@ -1,3 +1,5 @@
+[![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/pdsullivan/chkbook-app)
+
 ChkBook App
 =======
 ![App](http://pdsullivan.github.io/ChkBook/ChkBookAppIcon180.png)
