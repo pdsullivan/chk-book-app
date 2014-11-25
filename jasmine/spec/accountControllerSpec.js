@@ -4,7 +4,6 @@
 
 describe("accountsController", function() {
 
-
     var scope, controller;
     beforeEach(module('app'));
 
@@ -22,25 +21,17 @@ describe("accountsController", function() {
         });
     }));
 
-    it("should have a $scope variable", function() {
+    it("should have a scope variable defined", function() {
         expect(scope).toBeDefined();
     });
 
     it("should have a accounts array", function(){
-        //test
-
         expect(scope.accounts.length).toBe(0);
     });
 
-    //
-    //it("should have a type", function(){
-    //
-    //
-    //});
-    //
-    //it("should have a starting value", function(){
-    //
-    //
-    //});
+    it("should have types setup", function(){
+        expect(scope.accountTypes.length).toBe(3);
+
+    });
 
 });
