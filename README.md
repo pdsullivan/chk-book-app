@@ -5,7 +5,8 @@
 
 ChkBook App
 =======
-![App](http://pdsullivan.github.io/ChkBook/ChkBookAppIcon180.png)
+
+<img src="http://pdsullivan.github.io/ChkBook/ChkBookAppIcon180.png" style="border-radius: 50px" alt="App Icon" title="App Icon" />
 
 App I am working on building using the [Ionic Framework](http://ionicframework.com/).
 
