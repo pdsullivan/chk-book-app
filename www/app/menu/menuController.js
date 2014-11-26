@@ -1,9 +1,10 @@
 (function () {
     'use strict';
 
-    angular.module('app').controller('menuController', ['$scope', '$ionicModal', '$timeout', menuController]);
+    angular.module('app').controller('menuController', ['$scope', '$timeout', menuController]);
 
-    function menuController($scope, $ionicModal, $timeout) {
+    function menuController($scope,
+                            $timeout) {
         // Form data for the login modal
         $scope.loginData = {};
 
