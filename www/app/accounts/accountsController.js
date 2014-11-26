@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    angular.module('app').controller('accountsController', ["$scope","$ionicModal",'$ionicPopup', '$stateParams', '$timeout', '$state', accountsController]);
+    angular.module('app').controller('accountsController', ["$scope","$ionicModal",'$ionicPopup', '$state', accountsController]);
 
     function accountsController($scope,
                                 $ionicModal,
