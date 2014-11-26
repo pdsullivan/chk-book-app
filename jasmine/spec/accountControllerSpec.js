@@ -7,15 +7,21 @@ describe("accountsController", function() {
     var scope, controller;
     beforeEach(module('app'));
 
-    beforeEach(inject(function ($rootScope, $controller, $ionicModal,$ionicPopup,$stateParams,$timeout,$state) {
+    beforeEach(inject(function (
+        $rootScope,
+        $controller,
+        $ionicModal,
+        $ionicPopup,
+        $stateParams,
+        $timeout,
+        $state) {
+
         scope = $rootScope.$new();
 
             controller = $controller('accountsController', {
                 $scope: scope,
                 $ionicModal: $ionicModal,
                 $ionicPopup: $ionicPopup,
-                $stateParams: $stateParams,
-                $timeout: $timeout,
                 $state: $state
 
         });

@@ -4,7 +4,10 @@
 
     angular.module('app').controller('accountTransactionsController', ['$scope', '$ionicModal','$ionicPopup', '$stateParams', '$timeout', '$state', accountTransactionsController]);
 
-    function accountTransactionsController($scope, $ionicModal,$ionicPopup, $stateParams, $timeout, $state) {
+    function accountTransactionsController($scope,
+                                           $ionicModal,
+                                           $ionicPopup,
+                                           $stateParams) {
 
 
         //

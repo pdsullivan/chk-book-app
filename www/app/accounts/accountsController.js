@@ -4,7 +4,10 @@
 
     angular.module('app').controller('accountsController', ["$scope","$ionicModal",'$ionicPopup', '$stateParams', '$timeout', '$state', accountsController]);
 
-    function accountsController($scope, $ionicModal, $ionicPopup, $stateParams, $timeout, $state) {
+    function accountsController($scope,
+                                $ionicModal,
+                                $ionicPopup,
+                                $state) {
 
         $scope.addAccountData = {};
         $scope.accounts = [];
