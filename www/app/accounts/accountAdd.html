@@ -13,26 +13,26 @@
         })
     </script>
 <ion-content>
-        <form ng-submit="doAddAccount()" >
+        <form name="addAccountForm" ng-submit="doAddAccount()" >
         <div class="list">
             <label class="item item-input">
             <span class="input-label">Name</span>
-            <input type="text" ng-model="addAccountData.name" placeholder="New Account">
+            <input type="text" ng-model="addAccountData.name" placeholder="New Account" ng-required="true">
             </label>
             <label class="item item-input">
                 <span class="input-label">Start Amount</span>
-                <input type="number" placeholder="0.00" ng-model="addAccountData.amount" step="0.01" placeholder="0.00">
+                <input type="number" placeholder="0.00" ng-model="addAccountData.amount" step="0.01" placeholder="0.00" ng-required="true">
             </label>
             <div class="item item-input item-select">
                 <div class="input-label">
                     Account Type
                 </div>
 
-                <select ng-model="addAccountData.type" ng-options="item as item for item in accountTypes">
+                <select ng-model="addAccountData.type" ng-options="item as item for item in accountTypes" ng-required="true">
                 </select>
             </div>
             <label class="item">
-                <button class="button button-block button-positive" type="submit"><i class="icon ion-ios7-checkmark-outline"></i> Create Account</button>
+                <button ng-disabled="!addAccountForm.$valid" class="button button-block button-positive" type="submit"><i class="icon ion-ios7-checkmark-outline"></i> Create Account</button>
             </label>
         </div>
         </form>

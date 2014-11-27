@@ -2,12 +2,13 @@
 (function () {
     'use strict';
 
-    angular.module('app').controller('accountTransactionsController', ['$scope', '$ionicModal','$ionicPopup', '$stateParams', accountTransactionsController]);
+    angular.module('app').controller('accountTransactionsController', ['$scope', '$ionicModal','$ionicPopup', '$stateParams','$filter', accountTransactionsController]);
 
     function accountTransactionsController($scope,
                                            $ionicModal,
                                            $ionicPopup,
-                                           $stateParams) {
+                                           $stateParams,
+                                           $filter) {
 
 
         //
@@ -108,11 +109,13 @@
         });
 
         $scope.addTransaction = function() {
-            console.log('addTransaction');
             $scope.addTransactionData.id = guid();
             $scope.addTransactionData.amount = null;
             $scope.addTransactionData.isPositive = false;
             $scope.addTransactionData.createdDate = new Date();
+            $scope.addTransactionData.date = $filter("date")(Date.now(), 'yyyy-MM-dd');
+
+            console.log('addTransaction',$scope.addTransactionData);
             $scope.addTranModal.show();
         };
 
@@ -225,6 +228,12 @@
 
         initController();
 
+        Date.prototype.yyyymmdd = function() {
+            var yyyy = this.getFullYear().toString();
+            var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based
+            var dd  = this.getDate().toString();
+            return yyyy + (mm[1]?mm:"0"+mm[0]) + (dd[1]?dd:"0"+dd[0]); // padding
+        };
 
     };
 })();

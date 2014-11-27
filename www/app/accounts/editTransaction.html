@@ -6,7 +6,7 @@
         </div>
     </ion-header-bar>
     <ion-content>
-        <form ng-submit="doEditTransaction(editTransactionData)" >
+        <form name="editTransactionForm" ng-submit="doEditTransaction(editTransactionData)" >
             <div class="list">
                 <label class="item item-input">
                     <span class="input-label">Desc</span>
@@ -33,7 +33,7 @@
                     </a>
                 </div>
                 <label class="row">
-                    <button class="button button-block button-positive" type="submit"><i class="icon ion-ios7-checkmark-outline"></i> Save Item</button>
+                    <button ng-disabled="!editTransactionForm.$valid" class="button button-block button-positive" type="submit"><i class="icon ion-ios7-checkmark-outline"></i> Save Item</button>
                 </label>
             </div>
         </form>

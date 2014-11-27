@@ -6,21 +6,21 @@
         </div>
     </ion-header-bar>
     <ion-content>
-        <form ng-submit="doEditAccount()" >
+        <form name="editAccountForm" ng-submit="doEditAccount()" >
             <div class="list">
                 <label class="item item-input">
                     <span class="input-label">Name</span>
-                    <input type="text" ng-model="editAccountData.name" placeholder="New Account">
+                    <input type="text" ng-model="editAccountData.name" placeholder="New Account" ng-required="true">
                 </label>
                 <div class="item item-input item-select">
                     <div class="input-label">
                         Account Type
                     </div>
-                    <select ng-model="editAccountData.type" ng-options="item as item for item in accountTypes">
+                    <select ng-model="editAccountData.type" ng-options="item as item for item in accountTypes" ng-required="true">
                     </select>
                 </div>
                 <label class="item">
-                    <button class="button button-block button-positive" type="submit"><i class="icon ion-ios7-checkmark-outline"></i> Done</button>
+                    <button ng-disabled="!editAccountForm.$valid" class="button button-block button-positive" type="submit"><i class="icon ion-ios7-checkmark-outline"></i> Done</button>
                 </label>
             </div>
         </form>
