@@ -19,7 +19,7 @@
         $scope.addTransactionData = {};
         $scope.editTransactionData = {};
         $scope.transactions = [];
-        $scope.predicate = '-date , -createdDate';
+        $scope.predicate = '-date , -createdDate'; //sort by both one after the other.
 
         $scope.transAccount = angular.fromJson($stateParams.accountName);
 
