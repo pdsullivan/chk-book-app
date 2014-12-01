@@ -22,6 +22,7 @@ module.exports = function(config) {
       "www/app/dataServices/accountDataService.js",
       "www/app/logging/logingService.js",
       "jasmine/spec/accountControllerSpec.js"
+        
     ],
 
 
