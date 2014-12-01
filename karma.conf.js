@@ -19,6 +19,8 @@ module.exports = function(config) {
       "www/lib/angular-mocks/angular-mocks.js",
       "www/app/app.js",
       "www/app/accounts/accountsController.js",
+      "www/app/dataServices/accountDataService.js",
+      "www/app/logging/logingService.js",
       "jasmine/spec/accountControllerSpec.js"
     ],
 
