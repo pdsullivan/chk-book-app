@@ -2,12 +2,14 @@
 (function () {
     'use strict';
 
-    angular.module('app').controller('accountsController', ["$scope","$ionicModal",'$ionicPopup', '$state', accountsController]);
+    angular.module('app').controller('accountsController', ["$scope","$ionicModal",'$ionicPopup', '$state', 'loggingService','accountDataService', accountsController]);
 
     function accountsController($scope,
                                 $ionicModal,
                                 $ionicPopup,
-                                $state) {
+                                $state,
+                                loggingService,
+                                accountDataService) {
 
         $scope.addAccountData = {};
         $scope.accounts = [];
@@ -17,13 +19,18 @@
             'checking',
             'other'
         ];
+        loggingService.pushData('starting accounts controller');
 
-        //TODO: pull into service
+
         $scope.loadTransactions = function(account){
-            var transString = window.localStorage[account.id+'transactions'];
-            if(transString) {
-                $scope.transactions = angular.fromJson(transString);
-            }
+            //var transString = window.localStorage[account.id+'transactions'];
+            //if(transString) {
+            //    $scope.transactions = angular.fromJson(transString);
+            //}
+            accountDataService.getTransactions(account)
+                .then(function(data){
+                    $scope.transactions = data;
+                });
         };
 
         $scope.totalAccounts = function(){
@@ -55,15 +62,20 @@
         };
 
         $scope.loadAccounts = function(){
-            var accountsstring = window.localStorage['accounts'];
-            if(accountsstring) {
-                $scope.accounts = angular.fromJson(accountsstring);
-            }
+            //var accountsstring = window.localStorage['accounts'];
+            //if(accountsstring) {
+            //    $scope.accounts = angular.fromJson(accountsstring);
+            //}
+            accountDataService.getAccounts()
+                .then(function(data){
+                    //console.log('accounts', data);
+                    $scope.accounts = data;
 
-            $scope.totalAccounts();
+                    $scope.totalAccounts();
 
-            $scope.saveAccountsData();
-            //bla
+                    $scope.saveAccountsData();
+                });
+
 
         };
 
