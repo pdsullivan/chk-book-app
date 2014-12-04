@@ -22,4 +22,4 @@ I am keeping track of things that I am working on, going to work on, things I ha
 
 ## License
 
-Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
+Ionic is licensed under the MIT Open Source license.
