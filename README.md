@@ -22,4 +22,4 @@ I am keeping track of things that I am working on, going to work on, things I ha
 
 ## License
 
-Ionic is licensed under the MIT Open Source license.
+ChkBook is licensed under the MIT Open Source license.
