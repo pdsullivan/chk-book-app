@@ -14,7 +14,8 @@ describe("accountsController", function() {
         $ionicPopup,
         $stateParams,
         $timeout,
-        $state) {
+        $state,
+        $q) {
 
         scope = $rootScope.$new();
 
@@ -22,7 +23,8 @@ describe("accountsController", function() {
                 $scope: scope,
                 $ionicModal: $ionicModal,
                 $ionicPopup: $ionicPopup,
-                $state: $state
+                $state: $state,
+                $q: $q
 
         });
     }));
