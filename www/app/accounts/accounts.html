@@ -4,15 +4,16 @@
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
     <ion-nav-buttons side="right">
-        <button  class="button button-icon icon ion-ios7-plus-empty" ng-click="addAccount()"></button>
+        <button  class="button button-icon icon ion-ios7-plus-empty" ng-click="showAddAccountModal()"></button>
   </ion-nav-buttons>
 
   <ion-content class="has-header" has-bouncing="true">
+
       <ion-list class="list" show-delete="shouldShowDelete"
                 show-reorder="shouldShowReorder"
                 can-swipe="listCanSwipe" option-buttons="itemButtons">
 
-          <ion-item class="item item-icon-left item-icon-right" ng-repeat="item in accounts" ng-click="accountClick(item)">
+          <ion-item class="item item-icon-left item-icon-right account-item" ng-repeat="item in accounts" ng-click="accountClick(item)">
               <i ng-if="item.type =='checking'" class="icon ion-card positive"></i>
               <i ng-if="item.type =='saving'" class="icon ion-arrow-graph-up-right positive"></i>
               <i ng-if="item.type =='other'" class="icon ion-cash positive"></i>
@@ -20,7 +21,9 @@
                   <h1 class="dark">{{item.name}}</h1>
                   <br/>
               </div>
-              <p>{{item.total | currency}}</p>
+              <h2>
+                  {{item.total | currency}}
+              </h2>
 
               <i class="icon ion-ios7-arrow-right"></i>
               <ion-option-button class="button-info"

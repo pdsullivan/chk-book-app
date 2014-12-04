@@ -1,6 +1,6 @@
 <div class="modal"  >
     <ion-header-bar class="bar-light">
-        <h1 class="title">Add Item</h1>
+        <h1 class="title">Add Transaction</h1>
         <div class="buttons">
             <button class="button button-clear" ng-click="closeAddTransaction()"><i class="icon ion-ios7-close-outline"></i></button>
         </div>
@@ -26,15 +26,15 @@
                 </label>
 
                 <div class="row button-bar">
-                    <a class="button" ng-class="{'button-positive': addTransactionData.isPositive}" ng-click="onChangePositiveNegativeToggle(true)">
+                    <a class="button bs" ng-class="{'button-positive': addTransactionData.isPositive}" ng-click="onChangePositiveNegativeToggle(true)">
                         <i class="icon ion-ios7-plus-outline"></i>
                     </a>
-                    <a class="button" ng-class="{'button-assertive': !addTransactionData.isPositive}"  ng-click="onChangePositiveNegativeToggle(false)">
+                    <a class="button bs" ng-class="{'button-assertive': !addTransactionData.isPositive}"  ng-click="onChangePositiveNegativeToggle(false)">
                         <i class="icon ion-ios7-minus-outline"></i>
                     </a>
                 </div>
                 <label class="row">
-                    <button ng-disabled="!addTransactionForm.$valid" class="button button-block button-positive" type="submit"><i class="icon ion-ios7-checkmark-outline"></i> Create Item</button>
+                    <button ng-disabled="!addTransactionForm.$valid" class="button button-block button-positive bs" type="submit"><i class="icon ion-ios7-checkmark-outline"></i> Create Item</button>
                 </label>
             </div>
         </form>

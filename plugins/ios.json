@@ -26,15 +26,20 @@
                         }
                     ]
                 }
+            },
+            "framework": {
+                "parents": {
+                    "CoreGraphics.framework": []
+                }
             }
         }
     },
     "installed_plugins": {
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.ionicframework.accountsapplication783392"
+            "PACKAGE_NAME": "com.pdsullivan.chkbook"
         },
         "org.apache.cordova.statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.accountsapplication783392"
+            "PACKAGE_NAME": "com.pdsullivan.chkbook"
         }
     },
     "dependent_plugins": {}

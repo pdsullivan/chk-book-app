@@ -35,9 +35,10 @@ describe("accountsController", function() {
         expect(scope.accounts.length).toBe(0);
     });
 
-    it("should have types setup", function(){
+    it("should have account types setup", function(){
         expect(scope.accountTypes.length).toBe(3);
-
     });
+
+
 
 });

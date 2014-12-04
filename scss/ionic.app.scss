@@ -14,14 +14,27 @@ $assertive:                       #ef4e3a !default;
 $royal:                           #8a6de9 !default;
 */
 $positive:                        #2ecc71 !default;
-$dark:                            #393d41 !default;
+$dark:                            #797979 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $dark;
+  font-weight: 500;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 1.2;
+}
+small {
+  color: gray;
+}
 
+.item {
+  border-width: 0px;
+  border-style: solid;
+}
 
 .menu-content {
   -webkit-transform: none;
@@ -29,7 +42,114 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   transform: none;
   box-shadow: -1px 0px 2px rgba(0, 0, 0, 0.2), 1px 0px 2px rgba(0, 0, 0, 0.2);
 }
+
 .grade-b .menu-content, .grade-c .menu-content {
   border-right: 1px solid #ccc;
   border-left: 1px solid #ccc;
+}
+
+
+.bar.bar-positive {
+  border-color: transparent;
+  border-style: hidden;
+  border-width: 0px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(0deg, transparent, transparent 0%, transparent 50%);
+}
+.bar.bar-stable {
+  border-color: transparent;
+  border-style: hidden;
+  border-width: 0px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(0deg, transparent, transparent 0%, transparent 50%);
+}
+.bar.bar-light {
+  border-color: transparent;
+  border-style: hidden;
+  border-width: 0px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(0deg, transparent, transparent 0%, transparent 50%);
+}
+
+.scroll-content {
+  border-color: transparent;
+}
+
+.item-complex.item-icon-right {
+  padding-right: 0;
+  /* margin-bottom: 20px; */
+  margin-left: 10px !important;
+  margin-right: 10px  !important;
+  border-color: transparent;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  background-color: $stable;
+}
+
+.item-complex.item-icon-right.account-item {
+  padding-right: 0;
+  margin-bottom: 20px;
+  margin-left: 10px !important;
+  margin-right: 10px  !important;;
+  margin-top: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: $stable;
+}
+
+.item-divider {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-height: 30px;
+  background-color: transparent;
+  color: $dark;
+  font-weight: bold;
+}
+
+
+.item-complex .item-content, .item-radio .item-content {
+
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-content {
+  background-color: $stable;
+}
+
+.menu .scroll-content {
+  background-color: $light;
+}
+.card .item {
+  border-color:transparent;
+}
+.list {
+  //margin-top: 20px;
+}
+.card.card-overview {
+  overflow: hidden;
+  margin: 0px 0px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+p.col {
+  margin: 0 0 0px;
+}
+
+
+.bar { background-image: none !important; }
+
+
+.button.bs {
+  border-color: transparent;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.button.button-positive.bs {
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.item-select select {
+
+  width: 100%;
 }

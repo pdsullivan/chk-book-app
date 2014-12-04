@@ -9,28 +9,40 @@
 
     <ion-content class="has-header" has-bouncing="true">
 
-        <div class="list card" >
-        <div class="item item-text-wrap">
+        <div class="list card card-overview" >
+        <div class="item item-text-wrap item-icon-left">
             <!--<div class="row">-->
             <!--<h1>{{transAccount.name}}</h1>-->
             <!--</div>-->
-            <div class="row">
-                <h2 class="col">Balance:</h2>
-                <h2 class="col">{{transAccount.total | currency}}</h2>
+            <div>
+                <i ng-if="transAccount.type =='checking'" class="icon ion-card positive"></i>
+                <i ng-if="transAccount.type =='saving'" class="icon ion-arrow-graph-up-right positive"></i>
+                <i ng-if="transAccount.type =='other'" class="icon ion-cash positive"></i>
             </div>
             <div class="row">
-                <p class="col">Outstanding:</p>
-                <p class="col">{{transAccount.outstanding | currency}}</p>
+                <h3 class="col text-right">Balance:</h3>
+                <h3 class="col">{{transAccount.total | currency}}</h3>
+
             </div>
             <div class="row">
-                <p class="col">Cleared:</p>
-                <p class="col">{{transAccount.cleared | currency}}</p>
+                <small class="col text-right">Outstanding:</small>
+                <small class="col">{{transAccount.outstanding | currency}}</small>
+
+            </div>
+            <div class="row">
+                <small class="col text-right">Cleared:</small>
+                <small class="col">{{transAccount.cleared | currency}}</small>
+
             </div>
         </div>
         </div>
 
 
-        <ion-list class="list" scroll="true" can-swipe="true">
+
+            <ion-list class="list" scroll="true" can-swipe="true">
+                <div class="item item-divider">
+                    Transactions: {{transactions.length}}
+                </div>
             <ion-item class="item item-icon-right "  ng-repeat="item in transactions | orderBy:['-date', '-createdDate']">
                 <div class="row">
                     <label class="checkbox">
@@ -38,12 +50,12 @@
                     </label>
                     <div class="col">
                         <h2>{{item.desc}} </h2>
-                        <p>{{item.date | date}}</p>
-                        <p ng-if="item.memo">-{{item.memo}}</p>
+                        <small>{{item.date | date}}</small>
+                        <small ng-if="item.memo">-{{item.memo}}</small>
                     </div>
                     <p>
-                        <span ng-if="item.isPositive" class="badge" ng-class="{false : 'badge-assertive', true : 'badge-stable'}[item.isPositive]">{{item.amount | currency}}</span>
-                        <span ng-if="!item.isPositive" class="badge" ng-class="{false : 'badge-assertive', true : 'badge-stable'}[item.isPositive]">({{item.amount | currency}})</span>
+                        <h1 ng-if="item.isPositive" class="badge" ng-class="{false : 'badge-assertive', true : 'badge-stable'}[item.isPositive]">{{item.amount | currency}}</h1>
+                        <h1 ng-if="!item.isPositive" class="badge" ng-class="{false : 'badge-assertive', true : 'badge-stable'}[item.isPositive]">({{item.amount | currency}})</h1>
                     </p>
                 </div>
                 <ion-option-button class="button-info text-center"

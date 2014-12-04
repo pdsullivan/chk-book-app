@@ -2,16 +2,19 @@
 (function () {
     'use strict';
 
-    angular.module('app').controller('accountsController', ["$scope","$ionicModal",'$ionicPopup', '$state', 'loggingService','accountDataService', accountsController]);
+    angular.module('app').controller('accountsController', ["$scope","$ionicModal",'$ionicPopup', '$state', 'loggingService','accountDataService','$q', accountsController]);
 
     function accountsController($scope,
                                 $ionicModal,
                                 $ionicPopup,
                                 $state,
                                 loggingService,
-                                accountDataService) {
+                                accountDataService,
+                                $q) {
 
         $scope.addAccountData = {};
+        $scope.editAccountData = {};
+
         $scope.accounts = [];
         $scope.transactions = [];
         $scope.accountTypes = [
@@ -19,41 +22,32 @@
             'checking',
             'other'
         ];
-        loggingService.pushData('starting accounts controller');
 
-
-        $scope.loadTransactions = function(account){
-            //var transString = window.localStorage[account.id+'transactions'];
-            //if(transString) {
-            //    $scope.transactions = angular.fromJson(transString);
-            //}
-            accountDataService.getTransactions(account)
-                .then(function(data){
-                    $scope.transactions = data;
-                });
-        };
 
         $scope.totalAccounts = function(){
             angular.forEach($scope.accounts, function(item){
                 //add up item.amount's into a variable.
                 $scope.transAccount = item.id;
 
-                $scope.loadTransactions(item);
+                accountDataService.getTransactions(item)
+                    .then(function(data){
+                        $scope.transactions = data;
+                        item.total = item.amount;
 
-                item.total = item.amount;
+                        angular.forEach($scope.transactions, function(value, key) {
+                            //if(value.cleared){
+                            if(value.isPositive){
+                                item.total = (item.total + value.amount);
 
-                angular.forEach($scope.transactions, function(value, key) {
-                    //if(value.cleared){
-                        if(value.isPositive){
-                            item.total = (item.total + value.amount);
+                            } else {
+                                item.total = (item.total - value.amount);
+                            }
+                            //}
+                        });
 
-                        } else {
-                            item.total = (item.total - value.amount);
-                        }
-                    //}
-                });
+                        $scope.transactions = [];
+                    });
 
-                $scope.transactions = [];
 
             });
             //save that variable to the database.
@@ -62,14 +56,19 @@
         };
 
         $scope.loadAccounts = function(){
+            //service work
+
             //var accountsstring = window.localStorage['accounts'];
             //if(accountsstring) {
             //    $scope.accounts = angular.fromJson(accountsstring);
             //}
             accountDataService.getAccounts()
                 .then(function(data){
-                    //console.log('accounts', data);
-                    $scope.accounts = data;
+                    console.log('load accounts', data);
+                    if(data != null){
+                        $scope.accounts = data;
+
+                    }
 
                     $scope.totalAccounts();
 
@@ -84,37 +83,39 @@
         $ionicModal.fromTemplateUrl('app/accounts/accountAdd.html', {
             scope: $scope
         }).then(function(acdmodal) {
-            $scope.accountDetailModal = acdmodal;
+            $scope.accountAddModal = acdmodal;
         });
 
 
         // Triggered in the login modal to close it
-        $scope.closeAccountDetail = function() {
-            $scope.accountDetailModal.hide();
+        $scope.closeAddAccountModal = function() {
+            $scope.accountAddModal.hide();
         };
 
-        // Open the login modal
-        $scope.addAccount = function() {
-            $scope.accountDetailModal.show();
+        $scope.showAddAccountModal = function() {
+            $scope.accountAddModal.show();
             $scope.addAccountData.id = guid();
         };
 
-        $scope.loadAddAccount = function() {
-
-        };
-
-        // Perform the action when the user submits the form
-        $scope.doAddAccount = function() {
+        $scope.submitAddAccount = function() {
             console.log('Doing Add', $scope.addAccountData);
 
+            $scope.closeAddAccountModal();
 
-            $scope.closeAccountDetail();
-            $scope.accounts.push($scope.addAccountData);
+            $scope.addAccountItem($scope.addAccountData);
+
             $scope.addAccountData = {};
-            $scope.totalAccounts();
-            $scope.saveAccountsData();
+
 
         };
+
+        $scope.addAccountItem = function(accountToAdd) {
+            $scope.accounts.push(accountToAdd);
+            $scope.totalAccounts();
+            $scope.saveAccountsData();
+            loggingService.logError("adding account this is a string");
+
+        }
 
         //TODO: pull into service
         $scope.saveAccountsData = function(){
@@ -134,6 +135,7 @@
                 title: 'Delete Account',
                 template: 'Are you sure you want to delete this account?'
             });
+
             confirmPopup.then(function(res) {
                 if(res) {
 
@@ -148,11 +150,8 @@
             });
         };
 
-
-
         /////////// EDIT ACCOUNT MODAL STUFF  //////////////////////
 
-        $scope.editAccountData = {};
 
         $ionicModal.fromTemplateUrl('app/accounts/accountEdit.html', {
             scope: $scope
@@ -188,16 +187,6 @@
             $scope.saveAccountsData();
         };
 
-
-
-        $scope.getAccountbyId = function(id){
-          angular.forEach($scope.accounts, function(item){
-              if(item.id == id){
-                  return item;
-              }
-
-          });
-        };
 
         ///////////////////////////
         //////GuId Method

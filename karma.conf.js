@@ -17,12 +17,14 @@ module.exports = function(config) {
     files: [
       "www/lib/ionic/js/ionic.bundle.js",
       "www/lib/angular-mocks/angular-mocks.js",
+      "www/lib/ngCordova/dist/ng-cordova.js",
       "www/app/app.js",
       "www/app/accounts/accountsController.js",
       "www/app/dataServices/accountDataService.js",
       "www/app/logging/logingService.js",
+
       "jasmine/spec/accountControllerSpec.js"
-        
+
     ],
 
 
