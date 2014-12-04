@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>ChkBook</title>
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!--<script src="lib/hammer.js/hammer.js"></script>-->
+    <!--<script src="lib/angular-aria/angular-aria.min.js"></script>-->
+    <!--<script src="lib/angular-material/angular-material.js"></script>-->
+    <!--<link href="lib/angular-material/angular-material.css" rel="stylesheet">-->
+
+
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="app/app.js"></script>
+    <script src="app/menu/menuController.js"></script>
+    <script src="app/accounts/accountsController.js"></script>
+    <script src="app/about/aboutController.js"></script>
+
+    <script src="app/accounts/accountTransactionsController.js"></script>
+    <script src="app/login/loginController.js"></script>
+
+    <script src="app/logging/logingService.js"></script>
+    <script src="app/dataServices/accountDataService.js"></script>
+
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/moneymask.js"></script>
+
+
+
+  </head>
+
+  <body ng-app="app" class="platform-ios platform-cordova platform-webview">
+  <!--<ion-nav-bar class="nav-title-slide-ios7 bar-positive">-->
+      <!--<ion-nav-back-button class="button-icon ion-arrow-left-c">-->
+      <!--</ion-nav-back-button>-->
+  <!--</ion-nav-bar>-->
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>

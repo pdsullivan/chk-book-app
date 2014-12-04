@@ -1,0 +1,77 @@
+<ion-view title="{{transAccount.name}} {{transAccount.total | currency}}" ng-controller="accountTransactionsController" >
+    <ion-nav-buttons side="left">
+        <!--<button menu-toggle="left"class="button button-icon icon ion-navicon"></button>-->
+
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button  class="button button-icon icon ion-ios7-plus-empty" ng-click="addTransaction()"></button>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header" has-bouncing="true">
+
+        <div class="list card card-overview" >
+        <div class="item item-text-wrap item-icon-left">
+            <!--<div class="row">-->
+            <!--<h1>{{transAccount.name}}</h1>-->
+            <!--</div>-->
+            <div>
+                <i ng-if="transAccount.type =='checking'" class="icon ion-card positive"></i>
+                <i ng-if="transAccount.type =='saving'" class="icon ion-arrow-graph-up-right positive"></i>
+                <i ng-if="transAccount.type =='other'" class="icon ion-cash positive"></i>
+            </div>
+            <div class="row">
+                <h3 class="col text-right">Balance:</h3>
+                <h3 class="col">{{transAccount.total | currency}}</h3>
+
+            </div>
+            <div class="row">
+                <small class="col text-right">Outstanding:</small>
+                <small class="col">{{transAccount.outstanding | currency}}</small>
+
+            </div>
+            <div class="row">
+                <small class="col text-right">Cleared:</small>
+                <small class="col">{{transAccount.cleared | currency}}</small>
+
+            </div>
+        </div>
+        </div>
+
+
+
+            <ion-list class="list" scroll="true" can-swipe="true">
+                <div class="item item-divider">
+                    Transactions: {{transactions.length}}
+                </div>
+            <ion-item class="item item-icon-right "  ng-repeat="item in transactions | orderBy:['-date', '-createdDate']">
+                <div class="row">
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="item.cleared" ng-change="checkboxClick(item)" >
+                    </label>
+                    <div class="col">
+                        <h2>{{item.desc}} </h2>
+                        <small>{{item.date | date}}</small>
+                        <small ng-if="item.memo">-{{item.memo}}</small>
+                    </div>
+                    <p>
+                        <h1 ng-if="item.isPositive" class="badge" ng-class="{false : 'badge-assertive', true : 'badge-stable'}[item.isPositive]">{{item.amount | currency}}</h1>
+                        <h1 ng-if="!item.isPositive" class="badge" ng-class="{false : 'badge-assertive', true : 'badge-stable'}[item.isPositive]">({{item.amount | currency}})</h1>
+                    </p>
+                </div>
+                <ion-option-button class="button-info text-center"
+                                   ng-click="editTransaction(item)">
+                    Edit
+                </ion-option-button>
+                <ion-option-button class="button-assertive text-center"
+                                   ng-click="onTransactionDelete(item)">
+                    Delete
+                </ion-option-button>
+            </ion-item>
+
+        </ion-list>
+
+
+
+    </ion-content>
+
+</ion-view>

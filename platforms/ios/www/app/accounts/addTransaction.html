@@ -1,0 +1,42 @@
+<div class="modal"  >
+    <ion-header-bar class="bar-light">
+        <h1 class="title">Add Transaction</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeAddTransaction()"><i class="icon ion-ios7-close-outline"></i></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <form name="addTransactionForm" ng-submit="doAddTransaction(addTransactionData)" >
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Desc</span>
+                    <input ng-required="true" type="text" ng-model="addTransactionData.desc" placeholder="McDonald's" ng-required="true">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Amount</span>
+                    <input ng-required="true" type="number" placeholder="0.00" step="0.01" ng-model="addTransactionData.amount"  ng-required="true">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Date</span>
+                    <input ng-required="true" ng-model="addTransactionData.date" type="date"  ng-required="true">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Memo</span>
+                    <input  type="text" ng-model="addTransactionData.memo" placeholder="Memo"  >
+                </label>
+
+                <div class="row button-bar">
+                    <a class="button bs" ng-class="{'button-positive': addTransactionData.isPositive}" ng-click="onChangePositiveNegativeToggle(true)">
+                        <i class="icon ion-ios7-plus-outline"></i>
+                    </a>
+                    <a class="button bs" ng-class="{'button-assertive': !addTransactionData.isPositive}"  ng-click="onChangePositiveNegativeToggle(false)">
+                        <i class="icon ion-ios7-minus-outline"></i>
+                    </a>
+                </div>
+                <label class="row">
+                    <button ng-disabled="!addTransactionForm.$valid" class="button button-block button-positive bs" type="submit"><i class="icon ion-ios7-checkmark-outline"></i> Create Item</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</div>

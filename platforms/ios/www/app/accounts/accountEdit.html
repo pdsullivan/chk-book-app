@@ -1,0 +1,28 @@
+<div class="modal"  >
+    <ion-header-bar class="bar-light">
+        <h1 class="title">Edit Account</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeAccountEdit()"><i class="icon ion-ios7-close-outline"></i></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <form name="editAccountForm" ng-submit="doEditAccount()" >
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Name</span>
+                    <input type="text" ng-model="editAccountData.name" placeholder="New Account" ng-required="true">
+                </label>
+                <div class="item item-input item-select">
+                    <div class="input-label">
+                        Account Type
+                    </div>
+                    <select ng-model="editAccountData.type" ng-options="item as item for item in accountTypes" ng-required="true">
+                    </select>
+                </div>
+                <label class="item">
+                    <button ng-disabled="!editAccountForm.$valid" class="button button-block button-positive bs" type="submit"><i class="icon ion-ios7-checkmark-outline"></i> Done</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</div>
