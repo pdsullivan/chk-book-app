@@ -57,6 +57,11 @@ describe("accountsController", function() {
 
     it("new account should have name 'test''", function(){
 
+        var accountToAdd = {
+            name: "test",
+            amount: 100.00,
+            type: scope.accountTypes.checking
+        };
         scope.addAccountItem(accountToAdd);
 
         expect(scope.accounts[0].name).toBe("test");
