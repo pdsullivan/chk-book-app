@@ -41,6 +41,27 @@ describe("accountsController", function() {
         expect(scope.accountTypes.length).toBe(3);
     });
 
+    it('should be able to add account', function(){
+
+        var accountToAdd = {
+            name: "test",
+            amount: 100.00,
+            type: scope.accountTypes.checking
+        };
+
+        scope.addAccountItem(accountToAdd);
+
+        expect(scope.accounts.length).toBe(1);
+
+    });
+
+    it("new account should have name 'test''", function(){
+
+        scope.addAccountItem(accountToAdd);
+
+        expect(scope.accounts[0].name).toBe("test");
+
+    });
 
 
 });
