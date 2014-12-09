@@ -3,7 +3,7 @@
 [![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/pdsullivan/chkbook-app)
 
 
-[ChkBook](https://github.com/pdsullivan/ChkBook)
+[ChkBook](http://pdsullivan.github.io/ChkBook/)
 =======
 
 [Link to iOS App Store](https://itunes.apple.com/us/app/chkbook/id927749479?ls=1&mt=8)
