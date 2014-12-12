@@ -45,7 +45,7 @@ describe("accountsController", function() {
     });
 
     it("should have a accounts array with one account", function(){
-        expect(scope.accounts.length).toBe(1);
+        expect(scope.accounts.length).toBe(0);
     });
 
     it("should have account types setup", function(){
