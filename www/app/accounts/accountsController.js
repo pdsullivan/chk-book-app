@@ -176,17 +176,30 @@
 
             $scope.accountEditModal.hide();
 
-            for (var i = 0; i < $scope.accounts.length; i++) {
-                var currentItem = $scope.accounts[i];
-                if(currentItem.id == $scope.editAccountData.id){
-                    currentItem.name = $scope.editAccountData.name;
-                    currentItem.type = $scope.editAccountData.type;
-                }
-            }
+            //for (var i = 0; i < $scope.accounts.length; i++) {
+            //    var currentItem = $scope.accounts[i];
+            //    if(currentItem.id == $scope.editAccountData.id){
+            //        currentItem.name = $scope.editAccountData.name;
+            //        currentItem.type = $scope.editAccountData.type;
+            //    }
+            //}
+
+            $scope.saveEditedAccount($scope.editAccountData);
+
             $scope.editAccountData = {};
-            $scope.saveAccountsData();
         };
 
+        $scope.saveEditedAccount = function(account){
+            for (var i = 0; i < $scope.accounts.length; i++) {
+                var currentItem = $scope.accounts[i];
+                if(currentItem.id == account.id){
+                    currentItem.name = account.name;
+                    currentItem.type = account.type;
+                }
+            }
+
+            $scope.saveAccountsData();
+        };
 
         ///////////////////////////
         //////GuId Method

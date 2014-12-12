@@ -6,10 +6,7 @@
     <ion-nav-buttons side="right">
         <button  class="button button-icon icon ion-ios7-plus-empty" ng-click="addTransaction()"></button>
     </ion-nav-buttons>
-
-    <ion-content class="has-header" has-bouncing="true">
-
-        <div class="list card card-overview" >
+    <div class="list card card-overview" >
         <div class="item item-text-wrap item-icon-left">
             <!--<div class="row">-->
             <!--<h1>{{transAccount.name}}</h1>-->
@@ -35,14 +32,17 @@
 
             </div>
         </div>
-        </div>
+    </div>
+    <ion-content class="has-header trans" has-bouncing="true">
 
 
 
-            <ion-list class="list" scroll="true" can-swipe="true">
-                <div class="item item-divider">
-                    Transactions: {{transactions.length}}
-                </div>
+
+
+        <ion-list class="list tran"  can-swipe="true">
+            <div class="item item-divider">
+                Transactions: {{transactions.length}}
+            </div>
             <ion-item class="item item-icon-right "  ng-repeat="item in transactions | orderBy:['-date', '-createdDate']">
                 <div class="row">
                     <label class="checkbox">

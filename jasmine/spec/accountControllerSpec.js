@@ -29,12 +29,23 @@ describe("accountsController", function() {
         });
     }));
 
+    beforeEach(function(){
+
+        var accountToAdd = {
+            name: "test",
+            amount: 100.00,
+            type: scope.accountTypes.checking
+        };
+
+        scope.addAccountItem(accountToAdd);
+    });
+
     it("should have a scope variable defined", function() {
         expect(scope).toBeDefined();
     });
 
-    it("should have a accounts array", function(){
-        expect(scope.accounts.length).toBe(0);
+    it("should have a accounts array with one account", function(){
+        expect(scope.accounts.length).toBe(1);
     });
 
     it("should have account types setup", function(){
@@ -42,31 +53,20 @@ describe("accountsController", function() {
     });
 
     it('should be able to add account', function(){
-
-        var accountToAdd = {
-            name: "test",
-            amount: 100.00,
-            type: scope.accountTypes.checking
-        };
-
-        scope.addAccountItem(accountToAdd);
-
         expect(scope.accounts.length).toBe(1);
-
     });
 
     it("new account should have name 'test''", function(){
-
-        var accountToAdd = {
-            name: "test",
-            amount: 100.00,
-            type: scope.accountTypes.checking
-        };
-        scope.addAccountItem(accountToAdd);
-
         expect(scope.accounts[0].name).toBe("test");
-
     });
 
+    it("edited account should have name 'testedit''", function(){
+
+        var account = angular.copy(scope.accounts[0]);
+        account.name += 'edit';
+        scope.saveEditedAccount(account);
+        expect(scope.accounts[0].name).toBe("testedit");
+
+    });
 
 });
