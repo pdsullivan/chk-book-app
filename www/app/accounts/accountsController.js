@@ -113,7 +113,6 @@
             $scope.accounts.push(accountToAdd);
             $scope.totalAccounts();
             $scope.saveAccountsData();
-            loggingService.logError("adding account this is a string");
 
         }
 
