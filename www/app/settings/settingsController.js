@@ -9,6 +9,7 @@
     angular.module('app').controller('settingsController', ["$scope",'settingsDataService', settingsController]);
 
     function settingsController($scope,settingsDataService) {
+        $scope.settings = settingsDataService.getSettings();
         //$scope.settings = {};
         //console.log('',$scope.settings);
         $scope.settingsChanged = function(){
@@ -20,7 +21,7 @@
         }
 
         var init = function(){
-            $scope.settings = settingsDataService.getSettings();
+
 
         }
 

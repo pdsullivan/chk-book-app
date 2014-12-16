@@ -41,6 +41,7 @@
 
         function saveSettings(settings) {
             window.localStorage['settings'] = angular.toJson(settings);
+            return settings;
             //return $q.when(settings);
         }
 
