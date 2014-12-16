@@ -27,12 +27,13 @@ describe("settingsController", function() {
     }));
 
     beforeEach(function(){
-
-        //scope.settings.autoClearTrans = false;
+        scope.init();
+        scope.settings.autoClearTrans = false;
 
     });
 
     it("should have a scope variable defined", function() {
+        
         expect(scope).toBeDefined();
     });
 

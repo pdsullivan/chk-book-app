@@ -9,7 +9,7 @@
     angular.module('app').controller('settingsController', ["$scope",'settingsDataService', settingsController]);
 
     function settingsController($scope,settingsDataService) {
-        $scope.settings = settingsDataService.getSettings();
+        //$scope.settings = settingsDataService.getSettings();
         //$scope.settings = {};
         //console.log('',$scope.settings);
         $scope.settingsChanged = function(){
@@ -20,11 +20,16 @@
             settingsDataService.saveSettings($scope.settings);
         }
 
-        var init = function(){
-
+        $scope.init = function(){
+            //settingsDataService.getSettings()
+            //    .then(function(data){
+            //        console.log('settings received');
+            //        $scope.settings = data;
+            //    });
+            $scope.settings = settingsDataService.getSettings();
 
         }
 
-        init();
+        $scope.init();
     };
 })();

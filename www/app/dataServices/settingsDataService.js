@@ -40,12 +40,13 @@
                     autoClearTrans: false
                 };
             }
+            //return $q.when(settings);
             return settings;
         }
 
         function saveSettings(settings) {
             window.localStorage['settings'] = angular.toJson(settings);
-            return settings;
+            //return settings;
             //return $q.when(settings);
         }
 
