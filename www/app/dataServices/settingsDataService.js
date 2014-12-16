@@ -35,6 +35,10 @@
             console.log(settingsString);
             if(settingsString) {
                 settings = angular.fromJson(settingsString);
+            } else {
+                settings = {
+                    autoClearTrans: false
+                };
             }
             return settings;
         }
