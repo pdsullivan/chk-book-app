@@ -20,10 +20,13 @@ module.exports = function(config) {
       "www/lib/ngCordova/dist/ng-cordova.js",
       "www/app/app.js",
       "www/app/accounts/accountsController.js",
+      "www/app/settings/settingsController.js",
       "www/app/dataServices/accountDataService.js",
+      "www/app/dataServices/settingsDataService.js",
       "www/app/logging/logingService.js",
 
-      "jasmine/spec/accountControllerSpec.js"
+      "jasmine/spec/accountControllerSpec.js",
+      "jasmine/spec/settingsControllerSpec.js",
 
     ],
 
