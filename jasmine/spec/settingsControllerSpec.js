@@ -37,7 +37,7 @@ describe("settingsController", function() {
     });
 
     it("autoClearTrans should be false", function() {
-
+        scope.saveSettings();
         expect(scope.settings.autoClearTrans).toBe(false);
     });
 
