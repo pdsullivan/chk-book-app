@@ -32,7 +32,7 @@
 
             var settings = null;
             var settingsString = window.localStorage['settings'];
-            console.log(settingsString);
+            
             if(settingsString) {
                 settings = angular.fromJson(settingsString);
             } else {
