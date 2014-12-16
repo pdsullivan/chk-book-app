@@ -29,16 +29,15 @@ describe("settingsController", function() {
     beforeEach(function(){
         scope.init();
         scope.settings.autoClearTrans = false;
-
     });
 
     it("should have a scope variable defined", function() {
-        
+
         expect(scope).toBeDefined();
     });
 
     it("autoClearTrans should be false", function() {
-        scope.saveSettings();
+
         expect(scope.settings.autoClearTrans).toBeDefined();
     });
 
@@ -47,10 +46,13 @@ describe("settingsController", function() {
         expect(scope.settings.autoClearTrans).toBe(true);
     });
     it("autoClearTrans should be changed to true and saved", function() {
+
         scope.settings.autoClearTrans = true;
         scope.saveSettings();
         expect(scope.settings.autoClearTrans).toBe(true);
+
     });
+
 
 
 });

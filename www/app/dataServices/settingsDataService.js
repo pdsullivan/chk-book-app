@@ -36,18 +36,16 @@
             if(settingsString) {
                 settings = angular.fromJson(settingsString);
             } else {
+                //if there are no settings set set a default
                 settings = {
                     autoClearTrans: false
                 };
             }
-            //return $q.when(settings);
-            return settings;
+            return $q.when(settings);
         }
 
         function saveSettings(settings) {
             window.localStorage['settings'] = angular.toJson(settings);
-            //return settings;
-            //return $q.when(settings);
         }
 
 
