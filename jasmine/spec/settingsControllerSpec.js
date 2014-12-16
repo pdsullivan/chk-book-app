@@ -28,7 +28,7 @@ describe("settingsController", function() {
 
     beforeEach(function(){
 
-        scope.settings.autoClearTrans = false;
+        //scope.settings.autoClearTrans = false;
 
     });
 
@@ -38,7 +38,7 @@ describe("settingsController", function() {
 
     it("autoClearTrans should be false", function() {
         scope.saveSettings();
-        expect(scope.settings.autoClearTrans).toBe(false);
+        expect(scope.settings.autoClearTrans).toBeDefined();
     });
 
     it("autoClearTrans should be changed to true", function() {
