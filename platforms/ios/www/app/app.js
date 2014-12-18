@@ -24,21 +24,21 @@ angular.module('app', ['ionic', 'ngCordova'])
     })
 
 
-    .factory('$exceptionHandler', ['$injector', function($injector) {
-
-        var loggingService;
-
-        return function(exception, cause) {
-            loggingService = loggingService || $injector.get('loggingService');
-            exception.message += ' (caused by "' + cause + '")';
-
-            console.log('error', exception);
-
-            loggingService.logError(exception, exception.message);
-
-            throw exception;
-        };
-    }])
+    //.factory('$exceptionHandler', ['$injector', function($injector) {
+    //
+    //    var loggingService;
+    //
+    //    return function(exception, cause) {
+    //        loggingService = loggingService || $injector.get('loggingService');
+    //        exception.message += ' (caused by "' + cause + '")';
+    //
+    //        console.log('error', exception);
+    //
+    //        loggingService.logError(exception, exception.message);
+    //
+    //        throw exception;
+    //    };
+    //}])
 
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -75,6 +75,15 @@ angular.module('app', ['ionic', 'ngCordova'])
                     }
                 },
                 controller: 'aboutController'
+            })
+            .state('app.settings', {
+                url: "/settings",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "app/settings/settings.html"
+                    }
+                },
+                controller: 'settingsController'
             });
 
         // if none of the above states are matched, use this as the fallback

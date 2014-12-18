@@ -2,7 +2,16 @@
 (function () {
     'use strict';
 
-    angular.module('app').controller('accountsController', ["$scope","$ionicModal",'$ionicPopup', '$state', 'loggingService','accountDataService','$q', accountsController]);
+    angular.module('app').controller('accountsController', [
+        "$scope",
+        "$ionicModal",
+        '$ionicPopup',
+        '$state',
+        'loggingService',
+        'accountDataService',
+        'settingsDataService',
+        '$q',
+        accountsController]);
 
     function accountsController($scope,
                                 $ionicModal,
@@ -10,6 +19,7 @@
                                 $state,
                                 loggingService,
                                 accountDataService,
+                                settingsDataService,
                                 $q) {
 
         $scope.addAccountData = {};

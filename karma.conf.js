@@ -15,18 +15,20 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      "www/lib/ionic/js/ionic.bundle.js",
-      "www/lib/angular-mocks/angular-mocks.js",
-      "www/lib/ngCordova/dist/ng-cordova.js",
-      "www/app/app.js",
-      "www/app/accounts/accountsController.js",
-      "www/app/settings/settingsController.js",
-      "www/app/dataServices/accountDataService.js",
-      "www/app/dataServices/settingsDataService.js",
-      "www/app/logging/logingService.js",
+        "www/lib/ionic/js/ionic.bundle.js",
+        "www/lib/angular-mocks/angular-mocks.js",
+        "www/lib/ngCordova/dist/ng-cordova.js",
+        "www/app/app.js",
+        "www/app/accounts/accountsController.js",
+        "www/app/settings/settingsController.js",
+        "www/app/accounts/accountTransactionsController.js",
+        "www/app/dataServices/accountDataService.js",
+        "www/app/dataServices/settingsDataService.js",
+        "www/app/logging/logingService.js",
 
-      "jasmine/spec/accountControllerSpec.js",
-      "jasmine/spec/settingsControllerSpec.js",
+        "jasmine/spec/accountControllerSpec.js",
+        "jasmine/spec/settingsControllerSpec.js",
+        "jasmine/spec/accountTransactionsControllerSpec.js"
 
     ],
 

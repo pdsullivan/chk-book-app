@@ -2,12 +2,22 @@
 (function () {
     'use strict';
 
-    angular.module('app').controller('accountTransactionsController', ['$scope', '$ionicModal','$ionicPopup', '$stateParams','$filter', accountTransactionsController]);
+    angular.module('app').controller('accountTransactionsController', [
+        '$scope',
+        '$ionicModal',
+        '$ionicPopup',
+        '$stateParams',
+        'accountDataService',
+        'settingsDataService',
+        '$filter',
+        accountTransactionsController]);
 
     function accountTransactionsController($scope,
                                            $ionicModal,
                                            $ionicPopup,
                                            $stateParams,
+                                           accountDataService,
+                                           settingsDataService,
                                            $filter) {
 
 
