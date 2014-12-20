@@ -20,9 +20,9 @@ describe("accountTransactionsController", function() {
         $state,
         $q) {
 
+
+
         scope = $rootScope.$new();
-
-
         controller = $controller('accountsController', {
             $scope: scope,
             $ionicModal: $ionicModal,
@@ -52,8 +52,8 @@ describe("accountTransactionsController", function() {
         });
     }));
 
-    beforeEach(function(){
 
+    beforeEach(function(){
 
 
     });
@@ -64,6 +64,16 @@ describe("accountTransactionsController", function() {
 
     it("should have a the account named 'test'", function() {
         expect(scope.transAccount.name).toBe('test');
+    });
+
+    //TODO test the setting works to auto clear transactions.
+    it("should use the setting for auto signing off new transactions", function() {
+
+        //going to need to pull in the settingsDataService
+        //then set the setting for autoClearTrans
+
+        expect(true).toBe(true);
+
     });
 
 });

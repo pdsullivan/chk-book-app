@@ -123,7 +123,9 @@
             $scope.addTransactionData.amount = null;
             $scope.addTransactionData.isPositive = false;
             $scope.addTransactionData.createdDate = new Date();
-            $scope.addTransactionData.date = $filter("date")(Date.now(), 'yyyy-MM-dd');
+            //fixing new date errors that were happening
+            $scope.addTransactionData.date = new Date();
+            //$scope.addTransactionData.date =  $filter("date")(Date.now(), 'yyyy-MM-dd');
 
             console.log('addTransaction',$scope.addTransactionData);
             $scope.addTranModal.show();
@@ -137,11 +139,20 @@
             console.log('Doing Add Transaction', data.amount);
 
             $scope.closeAddTransaction();
-            $scope.addTransactionData.cleared = false;
-            $scope.transactions.push($scope.addTransactionData);
-            $scope.addTransactionData = {};
-            $scope.saveTransactions();
-            $scope.updateTotal();
+            var tranCleared = false;
+            settingsDataService.getSettings()
+                .then(function(settings){
+                    if(settings.autoClearTrans){
+                        tranCleared = true;
+                    }
+
+                    $scope.addTransactionData.cleared = tranCleared;
+                    $scope.transactions.push($scope.addTransactionData);
+                    $scope.addTransactionData = {};
+                    $scope.saveTransactions();
+                    $scope.updateTotal();
+                });
+
 
         };
 
@@ -150,6 +161,7 @@
                 title: 'Delete',
                 template: 'Are you sure you want to delete this item?'
             });
+
             confirmPopup.then(function(res) {
                 if(res) {
                     $scope.deleteTransaction(item);
@@ -164,9 +176,6 @@
             $scope.addTransactionData.isPositive = data;
         };
 
-
-
-
         //-----------------EDIT TRANSACTIONS-------------------
 
         $ionicModal.fromTemplateUrl('app/accounts/editTransaction.html', {
@@ -177,6 +186,10 @@
 
         $scope.editTransaction = function(item) {
             console.log(item);
+            //need to check the date of 'item.date' here
+            //causing error in the new angular version.
+            //need to google to figure out what is wrong.
+            //changed the date stuff when creating a new transactions so maybe related to the issue
             $scope.editTransactionData = angular.copy(item);
             $scope.editTranModal.show();
         };
@@ -199,7 +212,6 @@
 
                 if(currentItem.id == data.id){
                     index = i;
-                    //$scope.transactions[i] = $scope.editTransactionData;
                 }
             }
 

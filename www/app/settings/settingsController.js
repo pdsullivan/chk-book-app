@@ -10,9 +10,7 @@
 
     function settingsController($scope,settingsDataService) {
         $scope.settings = {};
-        //$scope.settings = settingsDataService.getSettings();
-        //$scope.settings = {};
-        //console.log('',$scope.settings);
+
         $scope.settingsChanged = function(){
             $scope.saveSettings();
         }
@@ -27,8 +25,6 @@
                     console.log('settings received');
                     $scope.settings = data;
                 });
-            //$scope.settings = settingsDataService.getSettings();
-
         }
 
         $scope.init();
