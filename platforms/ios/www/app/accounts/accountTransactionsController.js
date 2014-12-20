@@ -123,7 +123,9 @@
             $scope.addTransactionData.amount = null;
             $scope.addTransactionData.isPositive = false;
             $scope.addTransactionData.createdDate = new Date();
-            $scope.addTransactionData.date = $filter("date")(Date.now(), 'yyyy-MM-dd');
+            //fixing new date errors that were happening
+            $scope.addTransactionData.date = new Date();
+            //$scope.addTransactionData.date =  $filter("date")(Date.now(), 'yyyy-MM-dd');
 
             console.log('addTransaction',$scope.addTransactionData);
             $scope.addTranModal.show();
@@ -137,11 +139,20 @@
             console.log('Doing Add Transaction', data.amount);
 
             $scope.closeAddTransaction();
-            $scope.addTransactionData.cleared = false;
-            $scope.transactions.push($scope.addTransactionData);
-            $scope.addTransactionData = {};
-            $scope.saveTransactions();
-            $scope.updateTotal();
+            var tranCleared = false;
+            settingsDataService.getSettings()
+                .then(function(settings){
+                    if(settings.autoClearTrans){
+                        tranCleared = true;
+                    }
+
+                    $scope.addTransactionData.cleared = tranCleared;
+                    $scope.transactions.push($scope.addTransactionData);
+                    $scope.addTransactionData = {};
+                    $scope.saveTransactions();
+                    $scope.updateTotal();
+                });
+
 
         };
 
@@ -150,6 +161,7 @@
                 title: 'Delete',
                 template: 'Are you sure you want to delete this item?'
             });
+
             confirmPopup.then(function(res) {
                 if(res) {
                     $scope.deleteTransaction(item);
@@ -163,9 +175,6 @@
         $scope.onChangePositiveNegativeToggle = function(data){
             $scope.addTransactionData.isPositive = data;
         };
-
-
-
 
         //-----------------EDIT TRANSACTIONS-------------------
 
@@ -199,7 +208,6 @@
 
                 if(currentItem.id == data.id){
                     index = i;
-                    //$scope.transactions[i] = $scope.editTransactionData;
                 }
             }
 
