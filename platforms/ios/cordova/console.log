@@ -40,3 +40,4 @@
 2014-12-19 20:57:15.060 ChkBook[2914:97259] [CDVTimer][TotalPluginStartup] 136.252999ms
 2014-12-19 20:57:15.243 ChkBook[2914:97259] Resetting plugins due to page load.
 2014-12-19 20:57:15.535 ChkBook[2914:97259] Finished load of: file:///Users/patricksullivan/Library/Developer/CoreSimulator/Devices/A3E57316-B053-4C9D-8C61-5B770A6B914D/data/Containers/Bundle/Application/7F8D316A-56E0-4CE4-88E4-511C59497F3B/ChkBook.app/www/index.html#/app/accounts
+2014-12-20 15:59:03.799 ChkBook[2914:114589] Terminating since there is no system app.

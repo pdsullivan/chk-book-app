@@ -1,4 +1,8 @@
 
+
+/*
+ TODO: Make this controller smaller. Break it up!!!!!
+* */
 (function () {
     'use strict';
 
