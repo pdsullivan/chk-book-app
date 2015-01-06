@@ -141,6 +141,17 @@ p.col {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+.button.btn-default {
+  border-color: transparent;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.button.button-positive {
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
 .item-select select {
 
   width: 100%;
@@ -156,6 +167,6 @@ ion-content.trans {
   margin: 0px 0px;
   border-radius: 2px;
   background-color: #fff;
-  margin-top: 41px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-top: 61px;
+  //box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
