@@ -12,6 +12,13 @@
                     <span class="input-label">Name</span>
                     <input type="text" ng-model="editAccountData.name" placeholder="New Account" ng-required="true">
                 </label>
+
+
+                <label class="item item-input">
+                    <span class="input-label">Start Amount</span>
+                    <input type="number" placeholder="0.00" ng-model="editAccountData.amount" step="0.01" placeholder="0.00" ng-required="true">
+                </label>
+
                 <div class="item item-input item-select">
                     <div class="input-label">
                         Account Type

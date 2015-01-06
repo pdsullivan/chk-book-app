@@ -157,6 +157,8 @@
                     $scope.updateTotal();
                 });
 
+            //
+
 
         };
 
@@ -194,15 +196,26 @@
             //causing error in the new angular version.
             //need to google to figure out what is wrong.
             //changed the date stuff when creating a new transactions so maybe related to the issue
-
+            $scope.editTransactionData = null;
             $scope.editTransactionData = angular.copy(item);
+
             if($scope.editTransactionData.date.length < 19) {
                 var d = new Date();
 
-                $scope.editTransactionData.date = $scope.editTransactionData.date + "T"+ d.getHours()+":"+d.getMinutes() + ":" + d.getSeconds() + "." + d.getMilliseconds();
+                console.log($scope.editTransactionData.date.toString());
 
-                var newD = new Date($scope.editTransactionData.date);
-                $scope.editTransactionData.date =  new Date(newD.getYear(), newD.getMonth(), newD.getDate()) ;
+                console.log('timezoneoffset',d.getTimezoneOffset()/-60);
+                //
+                //$scope.editTransactionData.date = $scope.editTransactionData.date + "T"+ d.getHours()+":"+d.getMinutes() + ":" + d.getSeconds() + "." + d.getMilliseconds() + "Z";
+                //
+                //var newD = new Date($scope.editTransactionData.date);
+                //$scope.editTransactionData.date =  new Date(newD.getYear(), newD.getMonth(), newD.getDate()) ;
+                $scope.editTransactionData.date = new Date($scope.editTransactionData.date.toString());
+                $scope.editTransactionData.date.addHours(d.getTimezoneOffset()/60);
+            } else {
+
+                console.log('good date: '+$scope.editTransactionData.date.toString());
+                $scope.editTransactionData.date = new Date($scope.editTransactionData.date.toString());
             }
 
             $scope.editTranModal.show();
@@ -246,10 +259,6 @@
         };
 
 
-
-
-
-
         var guid = (function() {
             function s4() {
                 return Math.floor((1 + Math.random()) * 0x10000)
@@ -270,6 +279,10 @@
             var dd  = this.getDate().toString();
             return yyyy + (mm[1]?mm:"0"+mm[0]) + (dd[1]?dd:"0"+dd[0]); // padding
         };
+        Date.prototype.addHours= function(h){
+            this.setHours(this.getHours()+h);
+            return this;
+        }
 
     };
 })();

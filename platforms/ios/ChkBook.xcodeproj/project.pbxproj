@@ -39,8 +39,8 @@
 		7E7966E61810823500FA85AD /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DC1810823500FA85AD /* icon-small.png */; };
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
-		4FCCA671CA134268ACF133AC /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F636365C9B45A6AAE5BCE5 /* CDVDevice.m */; };
-		014F92F5CE7840018BB964B5 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C997058AB06441FF943B2CD8 /* CDVStatusBar.m */; };
+		3BC5EE4FAE174B3C8DC2B380 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 579F8B3311A6479699645066 /* CDVDevice.m */; };
+		6AE93701DBBC4AF8A101B2E8 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A3334A88A409597B8196B /* CDVStatusBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,10 +106,10 @@
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "ChkBook/config.xml"; sourceTree = "<group>"; };
-		76F636365C9B45A6AAE5BCE5 /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "org.apache.cordova.device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		CFFE07D559534063B97C72A5 /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "org.apache.cordova.device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		C997058AB06441FF943B2CD8 /* CDVStatusBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVStatusBar.m"; path = "org.apache.cordova.statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		6E46982FD4AA416AA03E0395 /* CDVStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVStatusBar.h"; path = "org.apache.cordova.statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		579F8B3311A6479699645066 /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "org.apache.cordova.device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		23EAEBAEA91F4CB29C340560 /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "org.apache.cordova.device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		BC8A3334A88A409597B8196B /* CDVStatusBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVStatusBar.m"; path = "org.apache.cordova.statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		C34DBDB4D4564108A425BC1A /* CDVStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVStatusBar.h"; path = "org.apache.cordova.statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,10 +208,10 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				76F636365C9B45A6AAE5BCE5 /* CDVDevice.m */,
-				CFFE07D559534063B97C72A5 /* CDVDevice.h */,
-				C997058AB06441FF943B2CD8 /* CDVStatusBar.m */,
-				6E46982FD4AA416AA03E0395 /* CDVStatusBar.h */,
+				579F8B3311A6479699645066 /* CDVDevice.m */,
+				23EAEBAEA91F4CB29C340560 /* CDVDevice.h */,
+				BC8A3334A88A409597B8196B /* CDVStatusBar.m */,
+				C34DBDB4D4564108A425BC1A /* CDVStatusBar.h */,
 			);
 			name = Plugins;
 			path = "ChkBook/Plugins";
@@ -396,8 +396,8 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				4FCCA671CA134268ACF133AC /* CDVDevice.m in Sources */,
-				014F92F5CE7840018BB964B5 /* CDVStatusBar.m in Sources */,
+				3BC5EE4FAE174B3C8DC2B380 /* CDVDevice.m in Sources */,
+				6AE93701DBBC4AF8A101B2E8 /* CDVStatusBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

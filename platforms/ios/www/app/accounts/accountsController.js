@@ -172,6 +172,7 @@
             $scope.editAccountData.id = item.id;
             $scope.editAccountData.name = item.name;
             $scope.editAccountData.type = item.type;
+            $scope.editAccountData.amount = item.amount;
             $scope.accountEditModal.show();
         };
 
@@ -204,11 +205,21 @@
                 if(currentItem.id == account.id){
                     currentItem.name = account.name;
                     currentItem.type = account.type;
+                    currentItem.amount = account.amount;
                 }
             }
 
             $scope.saveAccountsData();
+            $scope.totalAccounts();
         };
+
+        console.log('RUNNING THE WHOLE CONTROLLER');
+
+
+        $scope.$on('$ionicView.beforeEnter', function(){
+            console.log('BEFORE ENTER');
+            $scope.loadAccounts();
+        });
 
         ///////////////////////////
         //////GuId Method
