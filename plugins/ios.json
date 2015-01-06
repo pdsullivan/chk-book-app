@@ -26,11 +26,6 @@
                         }
                     ]
                 }
-            },
-            "framework": {
-                "parents": {
-                    "CoreGraphics.framework": []
-                }
             }
         }
     },

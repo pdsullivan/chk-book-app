@@ -1,43 +1,8 @@
-2014-12-02 14:39:58.734 ChkBook[46393:268967] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/patricksullivan/Library/Developer/CoreSimulator/Devices/A3E57316-B053-4C9D-8C61-5B770A6B914D/data/Containers/Data/Application/68D2F30A-6437-44AC-B6EC-9D361315DDF3/Library/Cookies/Cookies.binarycookies
-2014-12-02 14:39:58.870 ChkBook[46393:268967] Apache Cordova native platform version 3.6.3 is starting.
-2014-12-02 14:39:58.870 ChkBook[46393:268967] Multi-tasking -> Device: YES, App: YES
-2014-12-02 14:39:58.935 ChkBook[46393:268967] Unlimited access to network resources
-2014-12-02 14:39:59.716 ChkBook[46393:268967] [CDVTimer][statusbar] 124.514997ms
-2014-12-02 14:39:59.716 ChkBook[46393:268967] [CDVTimer][TotalPluginStartup] 124.710023ms
-2014-12-02 14:39:59.889 ChkBook[46393:268967] Resetting plugins due to page load.
-2014-12-02 14:40:00.298 ChkBook[46393:268967] Finished load of: file:///Users/patricksullivan/Library/Developer/CoreSimulator/Devices/A3E57316-B053-4C9D-8C61-5B770A6B914D/data/Containers/Bundle/Application/D9FD2C36-F9A5-4470-B696-BB5B6B3A977D/ChkBook.app/www/index.html#/app/accounts
-2014-12-02 14:45:11.457 ChkBook[46935:273821] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/patricksullivan/Library/Developer/CoreSimulator/Devices/A3E57316-B053-4C9D-8C61-5B770A6B914D/data/Containers/Data/Application/5FB8FEAD-B897-4DC1-A5B5-A70954C634C9/Library/Cookies/Cookies.binarycookies
-2014-12-02 14:45:11.651 ChkBook[46935:273821] Apache Cordova native platform version 3.6.3 is starting.
-2014-12-02 14:45:11.652 ChkBook[46935:273821] Multi-tasking -> Device: YES, App: YES
-2014-12-02 14:45:11.679 ChkBook[46935:273821] Unlimited access to network resources
-2014-12-02 14:45:12.623 ChkBook[46935:273821] [CDVTimer][statusbar] 154.909015ms
-2014-12-02 14:45:12.623 ChkBook[46935:273821] [CDVTimer][TotalPluginStartup] 155.114949ms
-2014-12-02 14:45:12.900 ChkBook[46935:273821] Resetting plugins due to page load.
-2014-12-02 14:45:13.750 ChkBook[46935:273821] Finished load of: file:///Users/patricksullivan/Library/Developer/CoreSimulator/Devices/A3E57316-B053-4C9D-8C61-5B770A6B914D/data/Containers/Bundle/Application/5ECB34B2-EE13-40C4-97EF-7E52C104F392/ChkBook.app/www/index.html#/app/accounts
-2014-12-02 17:06:29.704 ChkBook[51922:369706] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/patricksullivan/Library/Developer/CoreSimulator/Devices/A3E57316-B053-4C9D-8C61-5B770A6B914D/data/Containers/Data/Application/5202DF6D-7EC1-4C8A-9DE6-B690168A652D/Library/Cookies/Cookies.binarycookies
-2014-12-02 17:06:29.925 ChkBook[51922:369706] Apache Cordova native platform version 3.6.3 is starting.
-2014-12-02 17:06:29.926 ChkBook[51922:369706] Multi-tasking -> Device: YES, App: YES
-2014-12-02 17:06:29.969 ChkBook[51922:369706] Unlimited access to network resources
-2014-12-02 17:06:31.188 ChkBook[51922:369706] [CDVTimer][statusbar] 236.407995ms
-2014-12-02 17:06:31.188 ChkBook[51922:369706] [CDVTimer][TotalPluginStartup] 236.619055ms
-2014-12-02 17:06:31.414 ChkBook[51922:369706] Resetting plugins due to page load.
-2014-12-02 17:06:32.036 ChkBook[51922:369706] Finished load of: file:///Users/patricksullivan/Library/Developer/CoreSimulator/Devices/A3E57316-B053-4C9D-8C61-5B770A6B914D/data/Containers/Bundle/Application/77B7518E-674D-4C6B-9FC6-E51755387C05/ChkBook.app/www/index.html#/app/accounts
-2014-12-02 17:06:32.573 ChkBook[51922:369706] THREAD WARNING: ['StatusBar'] took '12.269043' ms. Plugin should use a background thread.
-2014-12-02 17:06:32.584 ChkBook[51922:369706] THREAD WARNING: ['Device'] took '10.065918' ms. Plugin should use a background thread.
-2014-12-19 20:55:03.072 ChkBook[2376:93685] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/patricksullivan/Library/Developer/CoreSimulator/Devices/A3E57316-B053-4C9D-8C61-5B770A6B914D/data/Containers/Data/Application/9774869E-841E-4471-8994-289D9515B5A9/Library/Cookies/Cookies.binarycookies
-2014-12-19 20:55:03.507 ChkBook[2376:93685] Apache Cordova native platform version 3.6.3 is starting.
-2014-12-19 20:55:03.508 ChkBook[2376:93685] Multi-tasking -> Device: YES, App: YES
-2014-12-19 20:55:03.533 ChkBook[2376:93685] Unlimited access to network resources
-2014-12-19 20:55:04.342 ChkBook[2376:93685] [CDVTimer][statusbar] 240.964949ms
-2014-12-19 20:55:04.342 ChkBook[2376:93685] [CDVTimer][TotalPluginStartup] 241.289973ms
-2014-12-19 20:55:04.639 ChkBook[2376:93685] Resetting plugins due to page load.
-2014-12-19 20:55:05.070 ChkBook[2376:93685] Finished load of: file:///Users/patricksullivan/Library/Developer/CoreSimulator/Devices/A3E57316-B053-4C9D-8C61-5B770A6B914D/data/Containers/Bundle/Application/20E8CE9D-04FA-451A-842C-38FBCCBAB241/ChkBook.app/www/index.html#/app/accounts
-2014-12-19 20:57:14.282 ChkBook[2914:97259] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/patricksullivan/Library/Developer/CoreSimulator/Devices/A3E57316-B053-4C9D-8C61-5B770A6B914D/data/Containers/Data/Application/3F251A5D-3E54-487D-B9F2-96FD4CAE350A/Library/Cookies/Cookies.binarycookies
-2014-12-19 20:57:14.522 ChkBook[2914:97259] Apache Cordova native platform version 3.6.3 is starting.
-2014-12-19 20:57:14.522 ChkBook[2914:97259] Multi-tasking -> Device: YES, App: YES
-2014-12-19 20:57:14.561 ChkBook[2914:97259] Unlimited access to network resources
-2014-12-19 20:57:15.060 ChkBook[2914:97259] [CDVTimer][statusbar] 136.058033ms
-2014-12-19 20:57:15.060 ChkBook[2914:97259] [CDVTimer][TotalPluginStartup] 136.252999ms
-2014-12-19 20:57:15.243 ChkBook[2914:97259] Resetting plugins due to page load.
-2014-12-19 20:57:15.535 ChkBook[2914:97259] Finished load of: file:///Users/patricksullivan/Library/Developer/CoreSimulator/Devices/A3E57316-B053-4C9D-8C61-5B770A6B914D/data/Containers/Bundle/Application/7F8D316A-56E0-4CE4-88E4-511C59497F3B/ChkBook.app/www/index.html#/app/accounts
-2014-12-20 15:59:03.799 ChkBook[2914:114589] Terminating since there is no system app.
+2015-01-05 17:24:04.749 ChkBook[34226:718331] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/patricksullivan/Library/Developer/CoreSimulator/Devices/DF4461E3-8913-4E5F-87D5-B2EFC7E01501/data/Containers/Data/Application/E8FB7F3B-A205-4E1E-B95A-8429472EE652/Library/Cookies/Cookies.binarycookies
+2015-01-05 17:24:05.153 ChkBook[34226:718331] Apache Cordova native platform version 3.7.0 is starting.
+2015-01-05 17:24:05.154 ChkBook[34226:718331] Multi-tasking -> Device: YES, App: YES
+2015-01-05 17:24:05.177 ChkBook[34226:718331] Unlimited access to network resources
+2015-01-05 17:24:06.083 ChkBook[34226:718331] [CDVTimer][statusbar] 223.134995ms
+2015-01-05 17:24:06.084 ChkBook[34226:718331] [CDVTimer][TotalPluginStartup] 223.326027ms
+2015-01-05 17:24:06.359 ChkBook[34226:718331] Resetting plugins due to page load.
+2015-01-05 17:24:07.085 ChkBook[34226:718331] Finished load of: file:///Users/patricksullivan/Library/Developer/CoreSimulator/Devices/DF4461E3-8913-4E5F-87D5-B2EFC7E01501/data/Containers/Bundle/Application/6DCCF979-B575-4361-B238-A2D522EA24CB/ChkBook.app/www/index.html#/app/accounts

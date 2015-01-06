@@ -190,11 +190,21 @@
 
         $scope.editTransaction = function(item) {
             console.log(item);
-            //need to check the date of 'item.date' here
+            //TODO: need to check the date of 'item.date' here
             //causing error in the new angular version.
             //need to google to figure out what is wrong.
             //changed the date stuff when creating a new transactions so maybe related to the issue
+
             $scope.editTransactionData = angular.copy(item);
+            if($scope.editTransactionData.date.length < 19) {
+                var d = new Date();
+
+                $scope.editTransactionData.date = $scope.editTransactionData.date + "T"+ d.getHours()+":"+d.getMinutes() + ":" + d.getSeconds() + "." + d.getMilliseconds();
+
+                var newD = new Date($scope.editTransactionData.date);
+                $scope.editTransactionData.date =  new Date(newD.getYear(), newD.getMonth(), newD.getDate()) ;
+            }
+
             $scope.editTranModal.show();
         };
 
