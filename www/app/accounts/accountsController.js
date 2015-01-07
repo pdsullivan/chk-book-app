@@ -80,6 +80,7 @@
 
                     }
 
+
                     $scope.totalAccounts();
 
                     $scope.saveAccountsData();

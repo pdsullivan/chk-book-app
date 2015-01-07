@@ -39,10 +39,10 @@
 
         console.log('state1 params:', $stateParams);
 
-        var initController = function(){
+        var initController = function () {
             $scope.loadTransactions();
-
         }
+
 
         //TODO: pull into service
         $scope.loadTransactions = function(){
@@ -50,8 +50,14 @@
             if(transString) {
                 $scope.transactions = angular.fromJson(transString);
                 console.log('log', $scope.transactions);
+
+                angular.forEach($scope.transactions, function(value, key) {
+                    value.date = getDateFromString(value.date);
+                    value.createdDate = new Date(value.createdDate);
+                });
             }
-            $scope.updateTotal();
+
+            $scope.saveTransactions();
         };
 
 
@@ -199,25 +205,21 @@
             $scope.editTransactionData = null;
             $scope.editTransactionData = angular.copy(item);
 
-            if($scope.editTransactionData.date.length < 19) {
-                var d = new Date();
-
-                console.log($scope.editTransactionData.date.toString());
-
-                console.log('timezoneoffset',d.getTimezoneOffset()/-60);
-                //
-                //$scope.editTransactionData.date = $scope.editTransactionData.date + "T"+ d.getHours()+":"+d.getMinutes() + ":" + d.getSeconds() + "." + d.getMilliseconds() + "Z";
-                //
-                //var newD = new Date($scope.editTransactionData.date);
-                //$scope.editTransactionData.date =  new Date(newD.getYear(), newD.getMonth(), newD.getDate()) ;
-                $scope.editTransactionData.date = new Date($scope.editTransactionData.date.toString());
-                $scope.editTransactionData.date.addHours(d.getTimezoneOffset()/60);
-            } else {
-
-                console.log('good date: '+$scope.editTransactionData.date.toString());
-                $scope.editTransactionData.date = new Date($scope.editTransactionData.date.toString());
-            }
-
+            //if($scope.editTransactionData.date.length < 19) {
+            //    var d = new Date();
+            //
+            //    console.log($scope.editTransactionData.date.toString());
+            //
+            //    console.log('timezoneoffset',d.getTimezoneOffset()/-60);
+            //    //
+            //    $scope.editTransactionData.date = new Date($scope.editTransactionData.date.toString());
+            //    $scope.editTransactionData.date.addHours(d.getTimezoneOffset()/60);
+            //} else {
+            //
+            //    console.log('good date: '+$scope.editTransactionData.date.toString());
+            //    $scope.editTransactionData.date = new Date($scope.editTransactionData.date.toString());
+            //}
+            $scope.editTransactionData.date = getDateFromString($scope.editTransactionData.date);
             $scope.editTranModal.show();
         };
 
@@ -258,7 +260,6 @@
             $scope.editTransactionData.isPositive = data;
         };
 
-
         var guid = (function() {
             function s4() {
                 return Math.floor((1 + Math.random()) * 0x10000)
@@ -270,6 +271,24 @@
                     s4() + '-' + s4() + s4() + s4();
             };
         })();
+
+
+        var getDateFromString = function(dateString){
+
+            var retDate;
+
+            if(dateString < 19) {
+                var d = new Date();
+                retDate = new Date(dateString.toString());
+                retDate.addHours(d.getTimezoneOffset()/60);
+                return retDate;
+            } else {
+                retDate = new Date(dateString.toString());
+                return retDate;
+            }
+        }
+
+
 
         initController();
 

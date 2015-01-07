@@ -23,6 +23,20 @@
                         {
                             "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EmailComposer\"><param name=\"ios-package\" value=\"EmailComposer\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "framework": {
+                "parents": {
+                    "MessageUI.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
                         }
                     ]
                 }
@@ -34,6 +48,9 @@
             "PACKAGE_NAME": "com.pdsullivan.chkbook"
         },
         "org.apache.cordova.statusbar": {
+            "PACKAGE_NAME": "com.pdsullivan.chkbook"
+        },
+        "com.jcjee.plugins.emailcomposer": {
             "PACKAGE_NAME": "com.pdsullivan.chkbook"
         }
     },

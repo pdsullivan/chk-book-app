@@ -157,6 +157,10 @@ p.col {
   width: 100%;
 }
 
+.item.wrap p {
+  white-space: normal;
+}
+
 ion-content.trans {
   //margin-top: 20px;
   margin-top: 128px;

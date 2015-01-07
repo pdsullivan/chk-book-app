@@ -7127,6 +7127,9 @@ p.col {
 .item-select select {
   width: 100%; }
 
+.item.wrap p {
+  white-space: normal; }
+
 ion-content.trans {
   margin-top: 128px; }
 
