@@ -20,6 +20,39 @@ module.exports = [
         "clobbers": [
             "EmailComposer"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.dialogs/www/notification.js",
+        "id": "org.apache.cordova.dialogs.notification",
+        "merges": [
+            "navigator.notification"
+        ]
+    },
+    {
+        "file": "plugins/org.pushandplay.cordova.apprate/www/AppRate.js",
+        "id": "org.pushandplay.cordova.apprate.AppRate",
+        "clobbers": [
+            "AppRate"
+        ]
+    },
+    {
+        "file": "plugins/org.pushandplay.cordova.apprate/www/locales.js",
+        "id": "org.pushandplay.cordova.apprate.locales",
+        "runs": true
+    },
+    {
+        "file": "plugins/org.apache.cordova.globalization/www/GlobalizationError.js",
+        "id": "org.apache.cordova.globalization.GlobalizationError",
+        "clobbers": [
+            "window.GlobalizationError"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.globalization/www/globalization.js",
+        "id": "org.apache.cordova.globalization.globalization",
+        "clobbers": [
+            "navigator.globalization"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -27,7 +60,10 @@ module.exports.metadata =
 {
     "org.apache.cordova.device": "0.2.12",
     "org.apache.cordova.statusbar": "0.1.8",
-    "com.jcjee.plugins.emailcomposer": "1.4.6"
+    "com.jcjee.plugins.emailcomposer": "1.4.6",
+    "org.apache.cordova.dialogs": "0.2.11",
+    "org.pushandplay.cordova.apprate": "1.1.6",
+    "org.apache.cordova.globalization": "0.3.3"
 }
 // BOTTOM OF METADATA
 });

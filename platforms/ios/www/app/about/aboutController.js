@@ -2,9 +2,9 @@
 (function () {
     'use strict';
 
-    angular.module('app').controller('aboutController', ["$scope", aboutController]);
+    angular.module('app').controller('aboutController', ["$scope",'$cordovaAppRate', aboutController]);
 
-    function aboutController($scope) {
+    function aboutController($scope,$cordovaAppRate) {
         $scope.version = '1.2';
         $scope.author = 'Patrick Sullivan';
 
@@ -22,6 +22,16 @@
                     null,                    // Attachments
                     null);                   // Attachment Data
             }
+        }
+
+        $scope.rateApp = function(){
+            if(AppRate){
+
+                AppRate.preferences.storeAppURL.ios = '927749479';
+                AppRate.promptForRating(true);
+            }
+
+
         }
     };
 })();

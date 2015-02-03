@@ -5,7 +5,6 @@
     </ion-nav-buttons>
     <ion-content class="has-header" has-bouncing="true" >
         <div class="list list-inset text-center">
-
             <div class="item text-center ">
                 <span><h1><i class="icon ion-happy positive"></i></h1><h2>Thanks for using ChkBook! </h2></span>
                 <p>Hope you are enjoying it.</p>
@@ -16,7 +15,6 @@
                 </p>
                 <h2>
                     {{version}}
-
                 </h2>
             </div>
             <div class="item">
@@ -24,19 +22,26 @@
                     Created By:
                 </p><h2>
                 {{author}}
-
             </h2>
             </div>
-
-            <div class="item wrap">
+        </div>
+        <ion-list class="list tran"  >
+            <div class="item  item-divider text-left">
+                Feedback
+            </div>
+            <ion-item class="item  item-icon-right " ng-click="rateApp()">
+                Please Rate ChkBook
+                <i class="icon ion-ios7-arrow-right"></i>
+            </ion-item>
+            <ion-item class="item item-border item-icon-right "  ng-click="sendFeedback()">
+                Send Me Some Feedback
+                <i class="icon ion-ios7-arrow-right"></i>
+            </ion-item>
+            <ion-item class="item  wrap text-left item-stable">
                 <p>
                     Please let me know if there is something you would like to see added or if there is something that is not working as you would like.
                 </p>
-                <button class="button button-block button-positive" ng-click="sendFeedback()">
-                    Send Me Some Feedback
-                </button>
-            </div>
-
-        </div>
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>

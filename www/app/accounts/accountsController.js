@@ -10,7 +10,7 @@
         'loggingService',
         'accountDataService',
         'settingsDataService',
-        '$q',
+        '$q','$cordovaDialogs',
         accountsController]);
 
     function accountsController($scope,
@@ -20,7 +20,7 @@
                                 loggingService,
                                 accountDataService,
                                 settingsDataService,
-                                $q) {
+                                $q, $cordovaDialogs) {
 
         $scope.addAccountData = {};
         $scope.editAccountData = {};

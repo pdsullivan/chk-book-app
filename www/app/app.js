@@ -20,6 +20,9 @@ angular.module('app', ['ionic', 'ngCordova'])
                 StatusBar.styleDefault();
             }
 
+
+
+
         });
     })
 

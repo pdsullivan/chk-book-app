@@ -27,6 +27,18 @@
                         {
                             "xml": "<feature name=\"EmailComposer\"><param name=\"ios-package\" value=\"EmailComposer\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Globalization\"><param name=\"ios-package\" value=\"CDVGlobalization\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AppRate\"><param name=\"ios-package\" value=\"CDVAppRate\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -36,6 +48,18 @@
                     "MessageUI.framework": [
                         {
                             "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "AudioToolbox.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "StoreKit.framework": [
+                        {
+                            "xml": "false",
                             "count": 1
                         }
                     ]
@@ -52,7 +76,17 @@
         },
         "com.jcjee.plugins.emailcomposer": {
             "PACKAGE_NAME": "com.pdsullivan.chkbook"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.pdsullivan.chkbook"
+        },
+        "org.pushandplay.cordova.apprate": {
+            "PACKAGE_NAME": "com.pdsullivan.chkbook"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "org.apache.cordova.globalization": {
+            "PACKAGE_NAME": "com.pdsullivan.chkbook"
+        }
+    }
 }

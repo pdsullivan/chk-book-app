@@ -2,7 +2,6 @@
 # http://git-scm.com/docs/gitignore
 .idea
 node_modules
-#platforms/
-
-.idea/workspace.xml
-platforms/android
+platforms
+plugins
+platforms/ios

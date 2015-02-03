@@ -13,6 +13,14 @@ $energized:                       #f0b840 !default;
 $assertive:                       #ef4e3a !default;
 $royal:                           #8a6de9 !default;
 */
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$calm:                            #43cee6 !default;
+$balanced:                        #66cc33 !default;
+$energized:                       #f0b840 !default;
+$assertive:                       #ef4e3a !default;
+$royal:                           #8a6de9 !default;
+
 $positive:                        #2ecc71 !default;
 $dark:                            #797979 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -35,7 +43,10 @@ small {
   border-width: 0px;
   border-style: solid;
 }
-
+.item-border {
+  border-width: 1px;
+  border-style: solid;
+}
 .menu-content {
   -webkit-transform: none;
   -moz-transform: none;
