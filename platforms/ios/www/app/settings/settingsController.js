@@ -6,12 +6,16 @@
 (function () {
     'use strict';
 
-    angular.module('app').controller('settingsController', ["$scope",'settingsDataService', settingsController]);
+    angular.module('app').controller('settingsController', ["$scope",'settingsDataService','$cordovaGoogleAnalytics', settingsController]);
 
-    function settingsController($scope,settingsDataService) {
+    function settingsController($scope,settingsDataService,$cordovaGoogleAnalytics) {
         $scope.settings = {};
 
         $scope.settingsChanged = function(){
+
+            if(window.cordova){
+                $cordovaGoogleAnalytics.trackEvent('Settings Changed','settingsChanged');
+            }
             $scope.saveSettings();
         }
 
@@ -28,5 +32,11 @@
         }
 
         $scope.init();
+
+        $scope.$on('$ionicView.beforeEnter', function(){
+            if(window.cordova){
+                $cordovaGoogleAnalytics.trackView('Settings Screen');
+            }
+        });
     };
 })();

@@ -41,6 +41,13 @@ module.exports = [
         "runs": true
     },
     {
+        "file": "plugins/com.danielcwilson.plugins.googleanalytics/www/analytics.js",
+        "id": "com.danielcwilson.plugins.googleanalytics.UniversalAnalytics",
+        "clobbers": [
+            "analytics"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.globalization/www/GlobalizationError.js",
         "id": "org.apache.cordova.globalization.GlobalizationError",
         "clobbers": [
@@ -63,6 +70,7 @@ module.exports.metadata =
     "com.jcjee.plugins.emailcomposer": "1.4.6",
     "org.apache.cordova.dialogs": "0.2.11",
     "org.pushandplay.cordova.apprate": "1.1.6",
+    "com.danielcwilson.plugins.googleanalytics": "0.6.1",
     "org.apache.cordova.globalization": "0.3.3"
 }
 // BOTTOM OF METADATA

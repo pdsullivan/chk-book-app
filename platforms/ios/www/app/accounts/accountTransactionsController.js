@@ -14,6 +14,7 @@
         'accountDataService',
         'settingsDataService',
         '$filter',
+        '$cordovaGoogleAnalytics',
         accountTransactionsController]);
 
     function accountTransactionsController($scope,
@@ -22,7 +23,8 @@
                                            $stateParams,
                                            accountDataService,
                                            settingsDataService,
-                                           $filter) {
+                                           $filter,
+                                           $cordovaGoogleAnalytics) {
 
 
         //
@@ -146,7 +148,10 @@
         };
 
         $scope.doAddTransaction = function(data) {
-            console.log('Doing Add Transaction', data.amount);
+
+            if(window.cordova){
+                $cordovaGoogleAnalytics.trackEvent('Add Transaction','doAddTransaction');
+            }
 
             $scope.closeAddTransaction();
             var tranCleared = false;
@@ -291,6 +296,13 @@
 
 
         initController();
+
+
+        $scope.$on('$ionicView.beforeEnter', function(){
+            if(window.cordova){
+                $cordovaGoogleAnalytics.trackView('Transactions Screen');
+            }
+        });
 
         Date.prototype.yyyymmdd = function() {
             var yyyy = this.getFullYear().toString();

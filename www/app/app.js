@@ -6,11 +6,18 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app', ['ionic', 'ngCordova'])
 
-    .run(function($ionicPlatform, $cordovaStatusbar) {
+    .run(function($ionicPlatform, $cordovaStatusbar,$cordovaGoogleAnalytics) {
 
         $ionicPlatform.ready(function() {
             //Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             //for form inputs)
+
+
+            //UA-59328829-1
+            if(window.cordova){
+                $cordovaGoogleAnalytics.startTrackerWithId('UA-59328829-1');
+            }
+
 
             if(window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -27,21 +34,21 @@ angular.module('app', ['ionic', 'ngCordova'])
     })
 
 
-    //.factory('$exceptionHandler', ['$injector', function($injector) {
-    //
-    //    var loggingService;
-    //
-    //    return function(exception, cause) {
-    //        loggingService = loggingService || $injector.get('loggingService');
-    //        exception.message += ' (caused by "' + cause + '")';
-    //
-    //        console.log('error', exception);
-    //
-    //        loggingService.logError(exception, exception.message);
-    //
-    //        throw exception;
-    //    };
-    //}])
+    .factory('$exceptionHandler', ['$injector', function($injector) {
+
+        var loggingService;
+
+        return function(exception, cause) {
+            //loggingService = loggingService || $injector.get('loggingService');
+            //exception.message += ' (caused by "' + cause + '")';
+            //
+            console.log('error handler: ', exception);
+            //
+            //loggingService.logError(exception, exception.message);
+            //
+            throw exception;
+        };
+    }])
 
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider

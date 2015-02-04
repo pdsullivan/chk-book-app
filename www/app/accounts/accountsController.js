@@ -10,7 +10,9 @@
         'loggingService',
         'accountDataService',
         'settingsDataService',
-        '$q','$cordovaDialogs',
+        '$q',
+        '$cordovaDialogs',
+        '$cordovaGoogleAnalytics',
         accountsController]);
 
     function accountsController($scope,
@@ -20,7 +22,9 @@
                                 loggingService,
                                 accountDataService,
                                 settingsDataService,
-                                $q, $cordovaDialogs) {
+                                $q,
+                                $cordovaDialogs,
+                                $cordovaGoogleAnalytics) {
 
         $scope.addAccountData = {};
         $scope.editAccountData = {};
@@ -121,6 +125,11 @@
         };
 
         $scope.addAccountItem = function(accountToAdd) {
+
+            if(window.cordova){
+                $cordovaGoogleAnalytics.trackEvent('Add Account','addAccountItem');
+            }
+
             $scope.accounts.push(accountToAdd);
             $scope.totalAccounts();
             $scope.saveAccountsData();
@@ -220,6 +229,10 @@
         $scope.$on('$ionicView.beforeEnter', function(){
             console.log('BEFORE ENTER');
             $scope.loadAccounts();
+            if(window.cordova){
+                $cordovaGoogleAnalytics.trackView('Accounts Screen');
+            }
+
         });
 
         ///////////////////////////
