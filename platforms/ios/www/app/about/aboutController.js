@@ -2,11 +2,51 @@
 (function () {
     'use strict';
 
-    angular.module('app').controller('aboutController', ["$scope",'$cordovaAppRate','$cordovaGoogleAnalytics', aboutController]);
+    angular.module('app').controller('aboutController', [
+        "$scope",
+        '$cordovaAppRate',
+        '$cordovaGoogleAnalytics',
+        '$cordovaAppVersion',
+        '$cordovaInAppBrowser',
+        '$rootScope',
+        aboutController]);
 
-    function aboutController($scope,$cordovaAppRate,$cordovaGoogleAnalytics) {
-        $scope.version = '1.2';
+    function aboutController($scope,
+                             $cordovaAppRate,
+                             $cordovaGoogleAnalytics,
+                             $cordovaAppVersion,
+                             $cordovaInAppBrowser,
+                             $rootScope) {
+        $scope.version = 'n/a';
         $scope.author = 'Patrick Sullivan';
+
+        var init = function(){
+            if(window.cordova){
+                $cordovaAppVersion.getAppVersion().then(function (version) {
+                    $scope.version =  version;
+                });
+            }
+        }
+
+        $scope.authorClick = function(){
+            var options = {
+                location: 'no',
+                clearcache: 'yes',
+                toolbarposition: 'top',
+                toolbar: 'yes'
+            };
+            if(window.cordova){
+
+
+                $cordovaInAppBrowser.open('http://www.pdsullivan.com', '_system', options)
+                    .then(function(event) {
+                        // success
+                    })
+                    .catch(function(event) {
+                        // error
+                    });
+            }
+        };
 
         $scope.sendFeedback =function(){
 
@@ -31,15 +71,15 @@
 
         $scope.rateApp = function(){
 
+
+            if(window.cordova && AppRate){
+                AppRate.preferences.storeAppURL.ios = '927749479';
+                AppRate.navigateToAppStore();
+            }
+
             if(window.cordova){
                 $cordovaGoogleAnalytics.trackEvent('Rate App','rateApp');
             }
-
-            if(AppRate){
-                AppRate.preferences.storeAppURL.ios = '927749479';
-                AppRate.rateApp();
-            }
-
 
         };
 
@@ -49,6 +89,8 @@
             }
         });
 
+
+        init();
 
     };
 })();

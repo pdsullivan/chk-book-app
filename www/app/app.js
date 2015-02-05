@@ -37,15 +37,11 @@ angular.module('app', ['ionic', 'ngCordova'])
     .factory('$exceptionHandler', ['$injector', function($injector) {
 
         var loggingService;
-
+        //var ;
         return function(exception, cause) {
-            //loggingService = loggingService || $injector.get('loggingService');
-            //exception.message += ' (caused by "' + cause + '")';
-            //
-            console.log('error handler: ', exception);
-            //
-            //loggingService.logError(exception, exception.message);
-            //
+            loggingService = loggingService || $injector.get('loggingService');
+            exception.message += ' (caused by "' + cause + '")';
+            loggingService.logError(exception, exception.message);
             throw exception;
         };
     }])

@@ -56,6 +56,8 @@
 		E89CBF5F0BDB42C8AB7C7126 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46D7BFD2ABF14927AF59B4D2 /* CoreData.framework */; };
 		DEC5533FE9F8453EA0DDDCF5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 98761D7291DB4AD1A8F0A89F /* libz.dylib */; };
 		3E5B9B8439CD4E20997FB1A2 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3165BC6942420C89822DEA /* libsqlite3.0.dylib */; };
+		352B909B22A3477588B6D980 /* AppVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = C444836B4C30497A81610663 /* AppVersion.m */; };
+		74699CE5254E4010BF867D92 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 649D95142DEC475DA8E569AF /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +156,10 @@
 		46D7BFD2ABF14927AF59B4D2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreData.framework"; path = "System/Library/Frameworks/CoreData.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 		98761D7291DB4AD1A8F0A89F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libz.dylib"; path = "usr/lib/libz.dylib"; sourceTree = SDKROOT; fileEncoding = 4; };
 		CB3165BC6942420C89822DEA /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsqlite3.0.dylib"; path = "usr/lib/libsqlite3.0.dylib"; sourceTree = SDKROOT; fileEncoding = 4; };
+		C444836B4C30497A81610663 /* AppVersion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppVersion.m"; path = "uk.co.whiteoctober.cordova.appversion/AppVersion.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		467B911BA4FD469DA5DC35E2 /* AppVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppVersion.h"; path = "uk.co.whiteoctober.cordova.appversion/AppVersion.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		649D95142DEC475DA8E569AF /* CDVInAppBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVInAppBrowser.m"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		12180C09A01641EDBBC39354 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +301,10 @@
 				4EB465EFFEEA45B68F3BD650 /* GAIEcommerceProduct.h */,
 				09FAC2A813A249C196AD1389 /* GAIEcommerceProductAction.h */,
 				EEDCC392C0B74231B3361DC3 /* GAIEcommercePromotion.h */,
+				C444836B4C30497A81610663 /* AppVersion.m */,
+				467B911BA4FD469DA5DC35E2 /* AppVersion.h */,
+				649D95142DEC475DA8E569AF /* CDVInAppBrowser.m */,
+				12180C09A01641EDBBC39354 /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = ChkBook/Plugins;
@@ -488,6 +498,8 @@
 				6B2C916F43264F519FEB7AA2 /* CDVGlobalization.m in Sources */,
 				7BE4510EE63F4B1D8AF9E3DF /* CDVAppRate.m in Sources */,
 				A8082EDBEC5C447D831266C8 /* UniversalAnalyticsPlugin.m in Sources */,
+				352B909B22A3477588B6D980 /* AppVersion.m in Sources */,
+				74699CE5254E4010BF867D92 /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

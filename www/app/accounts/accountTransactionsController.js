@@ -15,6 +15,7 @@
         'settingsDataService',
         '$filter',
         '$cordovaGoogleAnalytics',
+        '$cordovaDialogs',
         accountTransactionsController]);
 
     function accountTransactionsController($scope,
@@ -24,7 +25,8 @@
                                            accountDataService,
                                            settingsDataService,
                                            $filter,
-                                           $cordovaGoogleAnalytics) {
+                                           $cordovaGoogleAnalytics,
+                                           $cordovaDialogs) {
 
 
         //
@@ -174,19 +176,30 @@
         };
 
         $scope.onTransactionDelete = function(item){
-            var confirmPopup = $ionicPopup.confirm({
-                title: 'Delete',
-                template: 'Are you sure you want to delete this item?'
-            });
+            if(window.cordova){
+                $cordovaDialogs.confirm('Are you sure you want to delete this item?', 'Delete', ['Cancel','OK'])
+                    .then(function(buttonIndex) {
+                        // no button = 0, 'OK' = 2, 'Cancel' = 1
+                        var btnIndex = buttonIndex;
+                        if(btnIndex == 2){
+                            $scope.deleteTransaction(item);
+                        }
+                    });
+            } else {
 
-            confirmPopup.then(function(res) {
-                if(res) {
-                    $scope.deleteTransaction(item);
-                } else {
-                    console.log('You are not sure');
-                }
-            });
+                var confirmPopup = $ionicPopup.confirm({
+                    title: 'Delete',
+                    template: 'Are you sure you want to delete this item?'
+                });
 
+                confirmPopup.then(function(res) {
+                    if(res) {
+                        $scope.deleteTransaction(item);
+                    } else {
+                        console.log('You are not sure');
+                    }
+                });
+            }
         };
 
         $scope.onChangePositiveNegativeToggle = function(data){

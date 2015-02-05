@@ -7,9 +7,9 @@
     'use strict';
 
     var serviceId = 'loggingService';
-    angular.module('app').factory(serviceId, ['$http', loggingService]);
+    angular.module('app').factory(serviceId, ['$http','$cordovaGoogleAnalytics', loggingService]);
 
-    function loggingService($http) {
+    function loggingService($http,$cordovaGoogleAnalytics) {
 
         var url = 'http://pdsullivan.azurewebsites.net';
 
@@ -22,25 +22,12 @@
 
         function logError(errorData, message) {
 
-            console.log('ERROR', errorData);
 
-            var errorLogItem = {
-                appName: "ChkBook",
-                event: "errorLog",
-                message: message,
-                details: errorData,
-                date: new Date()
-            };
-
-
-            $http.post(url + '/api/errorlog/post', errorLogItem)
-                .success(function(){
-                    //alert('log success');
-                })
-                .error(function(){
-                    //alert('log error');
-                });
-
+            if(window.cordova){
+                $cordovaGoogleAnalytics.trackEvent('error handler',message);
+            } else {
+                if(console){console.log('error handler: ',message);}
+            }
 
 
         }

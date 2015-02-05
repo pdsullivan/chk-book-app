@@ -150,23 +150,42 @@
 
         //TODO: pull into service
         $scope.onAccountDelete = function(item){
-            var confirmPopup = $ionicPopup.confirm({
-                title: 'Delete Account',
-                template: 'Are you sure you want to delete this account?'
-            });
+            if(window.cordova){
+                $cordovaDialogs.confirm('Are you sure you want to delete this account?', 'Delete Account', ['Cancel','OK'])
+                    .then(function(buttonIndex) {
+                        //'OK' = 2, 'Cancel' = 1
 
-            confirmPopup.then(function(res) {
-                if(res) {
+                        var btnIndex = buttonIndex;
 
-                    localStorage.removeItem(item.id+'transactions');
+                        if(btnIndex == 2){
+                            localStorage.removeItem(item.id+'transactions');
 
-                    var index = $scope.accounts.indexOf(item);
-                    $scope.accounts.splice(index, 1);
-                    $scope.saveAccountsData();
-                } else {
-                    console.log('You are not sure');
-                }
-            });
+                            var index = $scope.accounts.indexOf(item);
+                            $scope.accounts.splice(index, 1);
+                            $scope.saveAccountsData();
+                        }
+
+                    });
+            } else {
+                var confirmPopup = $ionicPopup.confirm({
+                    title: 'Delete Account',
+                    template: 'Are you sure you want to delete this account?'
+                });
+
+                confirmPopup.then(function(res) {
+                    if(res) {
+
+                        localStorage.removeItem(item.id+'transactions');
+
+                        var index = $scope.accounts.indexOf(item);
+                        $scope.accounts.splice(index, 1);
+                        $scope.saveAccountsData();
+                    } else {
+                        console.log('You are not sure');
+                    }
+                });
+            }
+
         };
 
         /////////// EDIT ACCOUNT MODAL STUFF  //////////////////////

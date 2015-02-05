@@ -48,6 +48,20 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/uk.co.whiteoctober.cordova.appversion/www/AppVersionPlugin.js",
+        "id": "uk.co.whiteoctober.cordova.appversion.AppVersionPlugin",
+        "clobbers": [
+            "cordova.getAppVersion"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
+        "id": "org.apache.cordova.inappbrowser.inappbrowser",
+        "clobbers": [
+            "window.open"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.globalization/www/GlobalizationError.js",
         "id": "org.apache.cordova.globalization.GlobalizationError",
         "clobbers": [
@@ -71,6 +85,8 @@ module.exports.metadata =
     "org.apache.cordova.dialogs": "0.2.11",
     "org.pushandplay.cordova.apprate": "1.1.6",
     "com.danielcwilson.plugins.googleanalytics": "0.6.1",
+    "uk.co.whiteoctober.cordova.appversion": "0.1.5",
+    "org.apache.cordova.inappbrowser": "0.5.4",
     "org.apache.cordova.globalization": "0.3.3"
 }
 // BOTTOM OF METADATA
