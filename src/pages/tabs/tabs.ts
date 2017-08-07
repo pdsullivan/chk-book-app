@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { AboutPage } from '../about/about';
 import { SettingsPage } from '../settings/settings';
-import { AccountsPage } from '../accounts/accounts';
+import { AccountsPage } from '../accounts/accounts.page';
 
 @Component({
   templateUrl: 'tabs.html'
