@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 // import { NativeStorage } from '@ionic-native/native-storage';
-
+// private nativeStorage: NativeStorage
 @Injectable()
 export class AccountsService {
 
-  constructor(private nativeStorage: NativeStorage) {
+  constructor() {
 
   }
 
